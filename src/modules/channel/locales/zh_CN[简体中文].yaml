@@ -1,0 +1,186 @@
+channel:
+  index: 渠道管理
+  channel_code: 渠道编码
+  channel_name: 渠道名称
+  channel_type: 渠道类型
+  channel_icon: 渠道图标
+  country_code: 国家编码
+  currency: 货币币种
+  api_base_url: API基础URL
+  doc_url: 文档地址
+  support_collection: 支持收款
+  support_disbursement: 支持付款
+  config: 渠道配置
+  status: 状态
+  created_at: 创建时间
+  updated_at: 修改时间
+bankAccount:
+  index: 银行账户
+  channel_id: 银行
+  branch_name: 支行名称
+  account_holder: 账户持有人
+  account_number: 账户号码
+  bank_code: 银行编码
+  account_type: 账户类型
+  created_at: 创建时间
+  updated_at: 修改时间
+  balance: 账户余额
+  float_amount_enabled: 启用浮动金额
+  daily_max_receipt: 每日最大收款金额
+  daily_max_payment: 每日最大付款金额
+  daily_max_receipt_count: 每日最大收款次数
+  daily_max_payment_count: 每日最大付款次数
+  max_receipt_per_txn: 每笔最大收款金额
+  max_payment_per_txn: 每笔最大付款金额
+  min_receipt_per_txn: 每笔最小收款金额
+  min_payment_per_txn: 每笔最小付款金额
+  security_level: 安全等级
+  last_used_time: 最后使用时间
+  upi_id: UPI ID
+  used_quota: 已使用额度
+  limit_quota: 额度限制
+  today_receipt_count: 今日收款次数
+  today_payment_count: 今日付款次数
+  today_receipt_amount: 今日收款金额
+  today_payment_amount: 今日付款金额
+  stat_date: 统计日期
+  status: 状态
+  deleted_at: 删除时间
+  support_collection: 支持收款
+  support_disbursement: 支持付款
+  down_bill_template_id: 付款账单模板项
+  daily_receipt: 每日收款限制
+  daily_payment: 每日付款限制
+  today_receipt: 今日收款
+  today_payment: 今日付款
+  account_config: 账户配置
+channelAccount:
+  index: 渠道账户
+  channel_id: 渠道ID
+  account_type: 账户类型
+  merchant_id: 商户ID
+  api_config: API配置
+  document_info: 文档信息
+  api_version: API版本
+  callback_url: 回调地址
+  ip_whitelist: IP白名单
+  balance: 账户余额
+  currency: 币种
+  used_quota: 已使用额度
+  limit_quota: 额度限制
+  today_receipt_count: 今日收款次数
+  today_payment_count: 今日付款次数
+  today_receipt_amount: 今日收款金额
+  today_payment_amount: 今日付款金额
+  stat_date: 统计日期
+  status: 状态
+  created_at: 创建时间
+  updated_at: 修改时间
+  deleted_at: 删除时间
+  support_collection: 支持收款
+  support_disbursement: 支持付款
+  daily_max_receipt: 每日最大收款金额
+  daily_max_payment: 每日最大付款金额
+  daily_max_receipt_count: 每日最大收款次数
+  daily_max_payment_count: 每日最大付款次数
+  max_receipt_per_txn: 每笔最大收款金额
+  max_payment_per_txn: 每笔最大付款金额
+  min_receipt_per_txn: 每笔最小收款金额
+  min_payment_per_txn: 每笔最小付款金额
+ChannelAccountDailyStats:
+  index: 每日统计
+  channel_account_id: 渠道账户ID
+  bank_account_id: 银行账户ID
+  channel_id: 渠道ID
+  stat_date: 统计日期
+  transaction_count: 交易次数
+  collection_success_count: 收款成功次数
+  collection_failure_count: 收款失败次数
+  disbursement_success_count: 付款成功次数
+  disbursement_failure_count: 付款失败次数
+  receipt_amount: 收款金额
+  payment_amount: 付款金额
+  collection_success_rate: 收款成功率
+  disbursement_success_rate: 付款成功率
+  collection_avg_process_time: 收款平均耗时
+  disbursement_avg_process_time: 付款平均耗时
+  limit_status: 限额状态
+  created_at: 创建时间
+  updated_at: 修改时间
+channel_callback_record:
+  index: 回调记录
+  callback_id: 回调ID
+  channel_id: 渠道ID
+  original_request_id: 原始请求ID
+  callback_type: 回调类型
+  callback_url: 回调URL
+  callback_http_method: 回调HTTP方法
+  callback_params: 回调参数
+  callback_headers: 回调头信息
+  callback_body: 回调体内容
+  callback_time: 回调时间
+  client_ip: 回调来源IP
+  status: 接收状态
+  response_content: 返回内容
+  process_result: 处理结果描述
+  elapsed_time: 处理耗时
+  created_at: 创建时间
+channel_request_record:
+  index: 请求记录
+  request_id: 请求ID
+  channel_id: 渠道ID
+  api_method: API方法
+  request_url: 请求URL
+  http_method: HTTP方法
+  request_params: 请求参数
+  request_headers: 请求头
+  request_body: 请求内容
+  request_time: 请求时间
+  http_status_code: HTTP状态码
+  response_status: 响应状态
+  response_headers: 响应头
+  response_body: 响应内容
+  error_message: 错误信息
+  response_time: 响应时间
+  elapsed_time: 处理耗时
+  created_at: 创建时间
+  updated_at: 修改时间
+channelMenu:
+  channel:
+    list: 渠道列表
+    create: 新增渠道
+    update: 修改渠道
+    delete: 删除渠道
+    recovery: 恢复渠道
+    realDelete: 清空回收站
+  channelAccount:
+    list: 渠道账户列表
+    create: 新增渠道账户
+    update: 修改渠道账户
+    delete: 删除渠道账户
+    recovery: 恢复渠道账户
+    realDelete: 清空回收站
+  bankAccount:
+    list: 银行账户列表
+    create: 新增银行账户
+    update: 修改银行账户
+    delete: 删除银行账户
+    recovery: 恢复银行账户
+    realDelete: 清空回收站
+  channel_account_daily_stats:
+    list: 每日统计列表
+  channel_callback_record:
+    list: 回调记录列表
+    create: 新增回调记录
+    update: 修改回调记录
+    delete: 删除回调记录
+  channel_request_record:
+    list: 请求记录列表
+    create: 新增请求记录
+    update: 修改请求记录
+    delete: 删除请求记录
+enums:
+  channel:
+    account_type:
+      collection: 代收
+      payment: 代付

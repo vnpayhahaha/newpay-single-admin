@@ -1,0 +1,280 @@
+tenant:
+  index: 租户管理
+  tenantId: 租户ID
+  contactUserName: 联系人名称
+  contactPhone: 联系人手机
+  companyName: 公司名称
+  user_num_limit: 最大用户数
+  app_num_limit: 最大应用数
+  isEnabled: 是否启用
+  createdBy: 创建人
+  safeLevel: 安全等级
+  licenseNumber: 营业执照号
+  address: 公司地址
+  intro: 简介
+  domain: 域名
+  settlement_type: 结算方式
+  settlement_delay_days: 结算延迟天数
+  auto_transfer: 自动划扣
+  receipt_fee_type: 手续费类型(收)
+  receipt_fixed_fee: 固定手续费(收)
+  receipt_fee_rate: 手续费费率(收)
+  payment_fee_type: 手续费类型(付)
+  payment_fixed_fee: 固定手续费(付)
+  payment_fee_rate: 手续费费率(付)
+  limitHint: -1 表示无限制
+  unlimited: 无限制
+  is_payment: 是否启用付款
+  is_receipt: 是否启用收款
+  receipt_min_amount: 最小收款金额
+  receipt_max_amount: 最大收款金额
+  payment_min_amount: 最小付款金额
+  payment_max_amount: 最大付款金额
+  receipt_settlement_type: 收款结算方式
+  upstream_enabled: 启用上游收款
+  upstream_items: 上游收款项
+  float_enabled: 启用金额浮动
+  float_range: 金额浮动区间
+  notify_range: 通知下游金额区间
+  auto_assign_enabled: 付款自动分配
+  receipt_expire_minutes: 收款订单超时
+  payment_expire_minutes: 付款订单超时
+  reconcile_retain_minutes: 账单对账保留时间
+  bill_delay_minutes: 账单延迟时间
+  card_acquire_type: 银行卡获取方式
+  auto_verify_fail_rate: 自动核销失败比例
+  payment_assign_items: 付款自动分配项
+  collection_use_method: 收款方式
+  cashier_template: 收银台模板
+tenantApp:
+  index: 租户应用
+  appName: 应用名称
+  appKey: 应用密钥(Key)
+  appSecret: 应用私钥(Secret)
+  status: 状态
+  description: 描述
+  remark: 备注
+  createdAt: 创建时间
+  remarkPlaceholder: 请输入备注
+  refreshAppKey: 刷新应用密钥(Key)
+  refreshAppSecret: 刷新应用私钥(Secret)
+tenantUser:
+  index: 租户成员
+  avatar: 头像
+  username: 用户名
+  phone: 手机
+  password: 密码
+  last_login_ip: 最后登录IP
+  last_login_time: 最后登陆时间
+  status: 状态
+  is_enabled_google: 是否启用谷歌验证
+  google_secret: 谷歌验证密钥
+  is_bind_google: 是否绑定谷歌验证
+  created_by: 创建人
+  created_at: 创建时间
+  updated_by: 修改人
+  updated_at: 修改时间
+  deleted_by: 删除人
+  deleted_at: 删除时间
+  ip_whitelist: IP白名单
+  remark: 备注
+tenantConfig:
+  index: 租户配置
+  groupCode: 配置组编号
+  code: 配置编号
+  name: 配置名称
+  content: 配置内容
+  enabled: 是否启用
+  intro: 描述
+  option: 选项
+tenantAccount:
+  index: 租户账户
+  account_id: 账户编号
+  balance_available: 可用余额
+  balance_frozen: 冻结余额
+  account_type: 账户类型
+  version: 乐观锁版本
+  created_at: 创建时间
+  updated_at: 修改时间
+  add: 上分
+  sub: 下分
+  freeze: 冻结
+  unfreeze: 解冻
+  addSuccess: 上分成功
+  subSuccess: 下分成功
+  freezeSuccess: 冻结成功
+  unfreezeSuccess: 解冻成功
+tenantAccountRecord:
+  index: 所有账单记录
+  tenantAccountBillRecord: 租户账单
+  tenant_id: 租户编号
+  tenant_account_id: 关联租户账户ID
+  account_id: 账户ID
+  account_type: 账户类型
+  change_amount: 变动金额
+  balance_available_before: 可用余额(原)
+  balance_available_after: 可用余额(新)
+  balance_frozen_before: 冻结余额(原)
+  balance_frozen_after: 冻结余额(新)
+  change_type: 变动类型
+  transaction_no: 交易编号
+  created_at: 交易时间
+tenant_api_interface:
+  index: 开放接口
+  api_name: 接口名称
+  api_uri: 接口URI
+  http_method: 请求方式
+  request_params: 请求参数
+  request_params_en: 请求参数(en)
+  request_example: 请求示例
+  request_example_en: 请求示例(en)
+  response_params: 响应参数
+  response_params_en: 响应参数(en)
+  response_example: 响应示例
+  response_example_en: 响应示例(en)
+  description: 描述
+  description_en: 描述(en)
+  status: 状态
+  rate_limit: 频率限制
+  auth_mode: 授权模式
+  created_by: 创建人
+  updated_by: 修改人
+  created_at: 创建时间
+  updated_at: 修改时间
+tenant_notification_queue:
+  index: 通知队列
+  tenant_id: 租户编号
+  app_id: 应用ID
+  account_type: 账户类型
+  collection_order_id: 收款订单ID
+  disbursement_order_id: 付款订单ID
+  notification_type: 通知类型
+  notification_url: 通知URL
+  request_method: 请求方式
+  request_data: 请求数据
+  execute_status: 执行状态
+  execute_count: 执行次数
+  next_execute_time: 下次执行时间
+  last_execute_time: 最后执行时间
+  error_message: 错误信息
+  created_at: 创建时间
+  updated_at: 修改时间
+  max_retry_count: 最大重试次数
+  lock_version: 版本锁
+  detail: 详情
+tenant_notification_record:
+  index: 通知記錄
+  queue_id: 通知隊列ID
+  tenant_id: 租戶編號
+  app_id: 應用ID
+  account_type: 賬戶類型
+  collection_order_id: 收款訂單ID
+  disbursement_order_id: 付款訂單ID
+  notification_type: 通知類型
+  notification_url: 通知URL
+  request_method: 請求方式
+  request_data: 請求數據
+  response_status: 響應狀態
+  response_data: 響應數據
+  execute_count: 執行次數
+  status: 執行狀態
+  created_at: 創建時間
+  updated_at: 修改時間
+  # 新增的翻譯鍵值
+  tenant_company: 租戶公司
+  app_name: 應用名稱
+  app_key: 應用密鑰
+  basic_info: 基礎信息
+  order_info: 訂單詳情
+  order_type: 訂單類型
+  platform_order_no: 平台訂單號
+  merchant_order_no: 商戶訂單號
+  collection_order: 收款訂單
+  disbursement_order: 付款訂單
+  collection: 收款
+  disbursement: 付款
+  system_notification: 系統通知
+  order_notification: 訂單通知
+  bill_notification: 賬單通知
+  no_related_order: 無關聯訂單
+  associated_order: 關聯訂單
+tenantMenu:
+  tenant:
+    list: 租户列表
+    create: 新增租户
+    update: 修改租户
+    delete: 删除租户
+    recovery: 恢复租户
+    realDelete: 清空回收站
+  tenantApp:
+    list: 租户应用列表
+    create: 新增租户应用
+    update: 修改租户应用
+    delete: 删除租户应用
+    recovery: 恢复租户应用
+    realDelete: 清空回收站
+  tenantUser:
+    list: 租户成员列表
+    create: 新增租户成员
+    update: 修改成员信息
+    delete: 删除租户成员
+    recovery: 恢复租户成员
+    realDelete: 清空回收站
+  tenantConfig:
+    list: 租户配置列表
+    create: 新增租户配置
+    update: 修改租户配置
+    delete: 删除租户配置
+  tenant_account:
+    list: 租户账户列表
+    create: 新增租户账户
+    update: 修改成户账户
+    delete: 删除租户账户
+    change_balance_available: 修改账户可用余额
+    change_balance_frozen: 修改账户冻结余额
+  tenant_account_record:
+    list: 账单记录列表
+    create: 新增账单记录
+    update: 修改账单记录
+    delete: 删除账单记录
+  tenant_api_interface:
+    list: 接口列表
+    create: 新增接口
+    update: 修改接口
+    delete: 删除接口
+  tenant_notification_record:
+    list: 回调记录列表
+    create: 新增回调记录
+    update: 修改回调记录
+    delete: 删除回调记录
+enums:
+  tenant:
+    isEnabled:
+      true: 启用
+      false: 禁用
+  tenantApp:
+    status:
+      normal: 正常
+      disabled: 禁用
+  tenantAccount:
+    account_type:
+      collection: 代收
+      payment: 代付
+  tenantAccountRecord:
+    change_type:
+      transaction: 订单成功
+      refund: 订单退款
+      manual_add: 上分
+      manual_sub: 下分
+      freeze: 冻结
+      unfreeze: 解冻
+      transfer_in: 转入
+      transfer_out: 转出
+      reverse: 冲正
+      reversal: 反转
+      error_adjust: 错误调整
+crud:
+  collection:
+    edit: 代收
+  disbursement:
+    edit: 代付

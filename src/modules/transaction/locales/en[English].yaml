@@ -1,0 +1,586 @@
+transaction:
+  index: Transaction Management
+transaction_record:
+  index: Transaction Record
+  transaction_no: transaction no
+  tenant_account_id: tenant account id
+  account_id: account id
+  tenant_id: tenant id
+  amount: amount
+  fee_amount: fee amount
+  net_amount: net amount
+  account_type: account type
+  transaction_type: transaction type
+  settlement_delay_mode: settlement delay mode
+  expected_settlement_time: expected settlement time
+  settlement_delay_days: settlement delay days
+  holiday_adjustment: holiday adjustment
+  actual_settlement_time: actual settlement time
+  counterparty: counterparty
+  order_no: order no
+  ref_transaction_no: ref transaction no
+  transaction_status: transaction status
+  failed_msg: failed msg
+  remark: remark
+  created_at: create time
+  updated_at: update time
+  no_settlement_info: no settlement info
+transaction_queue_status:
+  index: Transaction Queue
+  transaction_no: transaction no
+  transaction_type: transaction type
+  process_status: process status
+  scheduled_execute_time: scheduled execute time
+  next_retry_time: next retry time
+  retry_count: retry count
+  lock_version: optimistic lock
+  error_code: error code
+  error_detail: error detail
+  created_at: create time
+  updated_at: update time
+transaction_voucher:
+  index: Transaction Voucher
+  channel_id: channel/bank
+  channel_account_id: channel account
+  bank_account_id: bank account
+  collection_card_no: collection card no
+  collection_amount: collection amount
+  collection_fee: collection fee
+  collection_time: collection time
+  collection_status: collection status
+  collection_source: collection source
+  transaction_voucher: transaction voucher
+  transaction_voucher_type: transaction voucher type
+  order_no: order no
+  content: content
+  operation_admin_id: operation admin
+  created_at: created at
+  updated_at: updated at
+  transaction_type: Transaction Type
+collection_order:
+  index: Collection Order
+  all: All
+  channel: Channel
+  bank_account: bank account
+  channel_account: channel account
+  merchant_id: Merchant ID
+  branch_name: Branch Name
+  order_no: Order No
+  platform_order_no: Platform Order No
+  tenant_order_no: Merchant Order No
+  upstream_order_no: Upstream Order No
+  amount_info: Amount Info
+  amount: Amount
+  payable_amount: Payable Amount
+  paid_amount: Paid Amount
+  fee: Fee
+  fixed_fee: Fixed Fee
+  rate_fee: Rate Fee
+  total_fee: Total
+  upstream_settlement_info: Upstream Settlement Info
+  upstream_fee: Upstream Fee
+  upstream_settlement_amount: Upstream Settlement Amount
+  settlement_amount: Settlement Amount
+  settlement_type: Settlement Type
+  collection_type: Collection Type
+  collection_channel_id: Collection Channel Id
+  pay_time: Pay Time
+  expire_time: Expire Time
+  order_source: Order Source
+  recon_type: Recon Type
+  callback_url: Callback Url
+  callback_count: Callback Count
+  notify_status: Notify Status
+  checkout_url: Checkout Url
+  return_url: Return Url
+  tenant_id: Tenant Id
+  app_id: App Id
+  payer_info: Payee Info
+  payer_name: Payee Name
+  payer_account: Payee Account
+  payer_bank: Payee Bank
+  payer_ifsc: Payee IFSC
+  payer_upi: Payee UPI
+  description: Description
+  status: Status
+  channel_transaction_no: Channel Transaction No
+  error_code: Error Code
+  error_message: Error Message
+  request_id: Request Id
+  created_at: Created At
+  updated_at: Updated At
+  payment_proof_photo: Payment Proof Photo
+  platform_transaction_no: Platform Transaction No
+  utr: UTR
+  customer_submitted_utr: Customer Submitted UTR
+  query_total: Query Total
+  write_off: Write Off
+  transaction_voucher: Transaction Voucher
+  paid_info: Paid Info
+  cancelled_at: Cancelled At
+  cancelled_by: Cancel operator
+  cancel_info: Cancel Info
+  status_records: Status Records
+  no_status_records: No Status Records
+  remark_label: Remark
+  status_labels:
+    0: Created
+    10: Processing
+    20: Success
+    30: Suspended
+    40: Failed
+    41: Cancelled
+    43: Expired
+    44: Refunded
+  settlement_status: Settlement Status
+  settlement_status_info: Settlement Info
+  query_order_amount: Query Order Amount
+  query_payable_amount: Query Payable Amount
+  query_paid_amount: Query Paid Amount
+disbursement_order:
+  bankStatement: Bank Statement
+  index: Payment Order
+  all: All
+  bank_account: Bank Account
+  channel_account: Channel Account
+  channel: Channel Info
+  channel_type: Channel Type
+  order_no: Order No
+  platform_order_no: Platform Order No
+  tenant_order_no: Merchant Order No
+  upstream_order_no: Upstream Order No
+  pay_time: Pay Time
+  order_source: Order Source
+  disbursement_channel_id: Disbursement Channel Id
+  bank_account_id: Bank Account Id
+  channel_account_id: Channel Account Id
+  amount: Amount
+  paid_amount: Paid Amount
+  fee: Fee
+  fixed_fee: Fixed Fee
+  rate_fee: Rate Fee
+  total_fee: Total Fee
+  settlement_amount: Settlement Amount
+  upstream_settlement_info: Upstream Settlement Info
+  upstream_fee: Upstream Fee
+  upstream_settlement_amount: Upstream Settlement Amount
+  payment_type: Payment Type
+  payee_bank_name: Payee Bank Name
+  payee_bank_code: Payee Bank Code
+  payee_account_name: Payee Account Name
+  payee_account_no: Payee Account No
+  payee_upi: Payee UPI
+  utr: UTR
+  tenant_id: Tenant Id
+  app_id: App Id
+  description: Description
+  status: Status
+  expire_time: Expire Time
+  notify_url: Notify Url
+  notify_count: Notify Count
+  notify_status: Notify Status
+  channel_transaction_no: Channel Transaction No
+  error_code: Error Code
+  error_message: Error Message
+  request_id: Request Id
+  created_at: Create time
+  updated_at: Update time
+  paid_info: Paid Info
+  cancelled_at: Cancelled At
+  cancelled_by: Cancel operator
+  cancel_info: Cancel Info
+  payee_info: Payee Info
+  undistributed: undistributed
+  distributed: distributed
+  distribute: Distribute
+  query_total: Query Total
+  write_off: Write Off
+  downloadBankBillMessage: Download bank statement
+  downloadBankBillSuccess: Bank statement downloaded successfully
+  downloadBankBillError: Request server error, download failed
+  download: Download
+  downloadBankBillSelectBankAccountMsg: Please select a bank and a bank account before continuing
+  bank_disbursement_download: Bank Statement
+  status_records: Status Records
+  no_status_records: No Status Records
+  remark_label: Remark
+  platform_transaction_no: Platform Transaction No
+  settlement_status: Settlement Status
+  settlement_status_info: Settlement Info
+  status_labels:
+    0: Creating
+    1: Created
+    2: Allocated
+    10: Pending Payment
+    11: Pending Reconciliation
+    20: Success
+    30: Suspended
+    40: Failed
+    41: Cancelled
+    43: Expired
+    44: Refunded
+  query_order_amount: Query Order Amount
+bankStatement:
+  index: Bank Statement
+  download: Download
+  select_bank_account: Select Bank Account
+bank_disbursement_download:
+  index: Download Record
+  attachment_id: Attachment ID
+  file_name: File Name
+  path: Storage Path
+  hash: File Hash
+  file_size: File Size
+  record_count: Download Record Count
+  created_by: Operator
+  created_at: Create Time
+bank_disbursement_upload:
+  index: Upload Record
+  attachment_id: Attachment ID
+  file_name: File Name
+  path: Storage Path
+  hash: File Hash
+  file_size: File Size
+  record_count: Record Count
+  created_by: Operator
+  created_at: Create Time
+  channel_id: Bank
+  upload_bill_template_id: Bill Template
+  parsing_status: Parsing Status
+  success_count: Success Count
+  failure_count: Failure Count
+  parsing_progress_message: Analyze progress information
+TransactionRawData:
+  index: Original voucher
+  hash: Hash
+  desc: Description
+  content: Content
+  source: Source
+  status: Status
+  repeat_count: Repeat Count
+  created_at: Create Time
+  updated_at: Update Time
+  channel: Channel/Bank
+  channel_id: Channel ID
+  bank_account: Bank Account
+  bank_account_id: Bank Account ID
+TransactionParsingRules:
+  index: Parsing Rules
+  channel: Channel
+  channel_id: Channel ID
+  regex: Regex
+  variable_name: Variable Name
+  example_data: Example Data
+  status: Status
+  created_at: Create Time
+  updated_at: Update Time
+  deleted_at: Delete Time
+  parse_result: Parse Result
+  parse_result_error: Parse Result Error
+TransactionParsingLog:
+  index: Parsing Log
+  raw_data_id: Raw Data ID
+  rule_id: Rule ID
+  rule_text: Rule Text
+  variable_name: Variable Name
+  status: Status
+  voucher_id: Voucher ID
+  created_at: Create Time
+  desc: Description
+bank_disbursement_bill_axis:
+  index: Bank Bill Axis
+  bill_id: Bill ID
+  sr_no: Serial Number
+  corporate_product: Corporate Product
+  payment_method: Payment Method
+  batch_no: Batch Number
+  next_working_day_date: Next Working Day Date
+  debit_account_no: Debit Account Number
+  corporate_account_description: Corporate Account Description
+  beneficiary_account_no: Beneficiary Account Number
+  beneficiary_code: Beneficiary Code
+  beneficiary_name: Beneficiary Name
+  payee_name: Payee Name
+  currency: Currency
+  amount_payable: Amount Payable
+  transaction_status: Transaction Status
+  crn_no: CRN Number
+  paid_date: Paid Date
+  utr_reference_no: UTR/RBI Reference No./Core Ref No.
+  funding_date: Funding Date
+  reason: Reason
+  remarks: Remarks
+  stage: Stage
+  email_id: Email ID
+  clg_branch_name: CLG Branch Name
+  activation_date: Activation Date
+  payout_mode: Payout Mode
+  finacle_cheque_no: Finacle Cheque No
+  ifsc_code: IFSC Code/MICR Code/IIN
+  bank_reference_no: Bank Reference No.
+  account_number: Account Number
+  created_by: Created By
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+  created_at: Created At
+  updated_at: Updated At
+bank_disbursement_bill_axis_neft:
+  index: Bank Bill AxisNEFT
+  bill_id: Bill ID
+  receipient_name: Recipient Name
+  account_number: Account Number
+  ifsc_code: IFSC Code
+  amount: Amount
+  description: Description
+  status: Status
+  failure_reason: Failure Reason
+  created_at: Created At
+  created_by: Created By
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+bank_disbursement_bill_axis_neo:
+  index: Bank Bill AxisNEO
+  bill_id: Bill ID
+  srl_no: Serial Number
+  tran_date: Transaction Date
+  chq_no: Cheque Number
+  particulars: Particulars
+  amount_inr: Amount (INR)
+  dr_cr: Dr/Cr
+  balance_inr: Balance (INR)
+  sol: SOL
+  created_at: Created At
+  created_by: Created By
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+bank_disbursement_bill_bandhan:
+  index: Bank Bill Bandhan
+  bill_id: Bill ID
+  core_ref_number: Core Reference Number
+  status: Status
+  execution_time: Execution Time
+  error_code: Error Code
+  payment_date: Payment Date
+  payment_type: Payment Type
+  customer_ref_number: Customer Reference Number
+  source_account_number: Source Account Number
+  source_narration: Source Narration
+  destination_account_number: Destination Account Number
+  currency: Currency
+  amount: Amount
+  destination_narration: Destination Narration
+  destination_bank: Destination Bank
+  destination_bank_routing_code: Destination Bank Routing Code
+  beneficiary_name: Beneficiary Name
+  beneficiary_code: Beneficiary Code
+  beneficiary_account_type: Beneficiary Account Type
+  created_at: Created At
+  created_by: Created By
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+  rejection_reason: Rejection Reason
+bank_disbursement_bill_icici:
+  index: Bank Bill ICICI
+  bill_id: Bill ID
+  pymt_mode: Payment Mode
+  file_sequence_num: File Sequence Number
+  debit_acct_no: Debit Account Number
+  beneficiary_name: Beneficiary Name
+  beneficiary_account_no: Beneficiary Account Number
+  bene_ifsc_code: Beneficiary IFSC Code
+  amount: Amount
+  remark: Remark
+  pymt_date: Payment Date
+  status: Status
+  rejection_reason: Rejection Reason
+  customer_ref_no: Customer Reference Number
+  utr_no: UTR Number
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+  created_at: Created At
+  created_by: Created By
+bank_disbursement_bill_icici_2:
+  index: Bank Bill ICICI2
+  bill_id: Bill ID
+  network_id: Network ID
+  credit_account_number: Credit Account Number
+  debit_account_number: Debit Account Number
+  ifsc_code: IFSC Code
+  total_amount: Total Amount
+  host_reference_number: Host Reference Number
+  transaction_remarks: Transaction Remarks
+  transaction_status: Transaction Status
+  transaction_status_remarks: Transaction Status Remarks
+  created_at: Created At
+  created_by: Created By
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+  rejection_reason: Rejection Reason
+bank_disbursement_bill_idfc:
+  index: Bank Bill IDFC
+  bill_id: Bill ID
+  beneficiary_name: Beneficiary Name
+  beneficiary_account_number: Beneficiary Account Number
+  ifsc: IFSC Code
+  transaction_type: Transaction Type
+  debit_account_no: Debit Account No
+  transaction_date: Transaction Date
+  amount: Amount
+  currency: Currency
+  beneficiary_email_id: Beneficiary Email ID
+  remarks: Remarks
+  utr_number: UTR Number
+  status: Status
+  errors: Errors
+  created_at: Created At
+  created_by: Created By
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+bank_disbursement_bill_iob_other:
+  index: Bank Bill IOB-Other
+  bill_id: Bill ID
+  s_no: Serial Number
+  name: Name
+  ifsc_code: IFSC Code
+  type: Type
+  number: Number
+  amount: Amount
+  charges: Charges
+  status: Status
+  remarks: Remarks
+  narration: Narration
+  utr_no: UTR Number
+  reason: Reason
+  created_at: Created At
+  created_by: Created By
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+  rejection_reason: Rejection Reason
+bank_disbursement_bill_iob_same:
+  index: Bank Bill IOB-Same
+  bill_id: Bill ID
+  s_no: Serial Number
+  name: Name
+  ifsc_code: IFSC Code
+  type: Type
+  number: Number
+  amount: Amount
+  charges: Charges
+  status: Status
+  remarks: Remarks
+  narration: Narration
+  utr_no: UTR Number
+  reason: Reason
+  created_at: Created At
+  created_by: Created By
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+  rejection_reason: Rejection Reason
+bank_disbursement_bill_yesmsme:
+  index: Bank Bill YESMSME
+  bill_id: Bill ID
+  record: Record
+  record_ref_no: Record Reference No
+  file_ref_no: File Reference No
+  ebanking_ref_no: E-banking Reference No
+  contract_ref_no: Contract Reference No
+  record_status: Record Status
+  status_code: Status Code
+  status_description: Status Description
+  created_at: Created At
+  created_by: Created By
+  order_no: Order No
+  upload_id: Upload ID
+  file_hash: File Hash
+menu:
+  transaction_record:
+    list: Transaction Record List
+    create: Create Transaction Record
+    update: Update Transaction Record
+    delete: Delete Transaction Record
+  transaction_queue_status:
+    list: Transaction Queue List
+    create: Create Transaction Queue
+    update: Update Transaction Queue
+    delete: Delete Transaction Queue
+  collection_order:
+    list: Collection Order List
+    create: Collection Order Create
+    update: Collection Order Update
+    delete: Collection Order Delete
+  disbursement_order:
+    list: Disbursement Order List
+    create: Disbursement Order Create
+    update: Disbursement Order Update
+    delete: Disbursement Order Delete
+  transaction_voucher:
+    list: Transaction Voucher List
+    create: Transaction Voucher Create
+    update: Transaction Voucher Update
+    delete: Transaction Voucher Delete
+  bank_disbursement_download:
+    list: Bank Disbursement Download List
+    create: Bank Disbursement Download Create
+    update: Bank Disbursement Download Update
+    delete: Bank Disbursement Download Delete
+  bank_disbursement_upload:
+    list: Bank Disbursement Upload List
+    create: Bank Disbursement Upload Create
+    update: Bank Disbursement Upload Update
+    delete: Bank Disbursement Upload Delete
+  transaction_raw_data":
+    list: Transaction Raw Data List
+    create: Transaction Raw Data Create
+    update: Transaction Raw Data Update
+    delete: Transaction Raw Data Delete
+  transaction_parsing_rules:
+    list: Transaction Parsing Rules List
+    create: Transaction Parsing Rules Create
+    update: Transaction Parsing Rules Update
+    delete: Transaction Parsing Rules Delete
+  transaction_parsing_log:
+    list: Transaction Parsing Log List
+    create: Transaction Parsing Log Create
+    update: Transaction Parsing Log Update
+    delete: Transaction Parsing Log Delete
+enums:
+  transaction_type:
+    collection: Collection
+    disbursement: Disbursement
+  transaction_voucher_type:
+    order_id: Order ID code
+    platform_order_no: Platform Order No
+    upstream_order_no: Upstream Order No
+    utr: UTR
+    amount: Amount
+  CollectionOrder:
+    status:
+      create: created
+      processing: pending payment
+      success: success
+      suspend: suspend
+      fail: failed
+      cancel: cancelled
+      invalid: invalid
+      refund: refunded
+  disbursement_order:
+    status:
+      create: created
+      allocated: allocated
+      wait_pay: pending payment
+      wait_fill: processing
+      success: success
+      suspend: suspend
+      fail: failed
+      cancel: cancelled
+      invalid: invalid
+      refund: refunded

@@ -1,0 +1,39 @@
+# 文章管理模組
+article:
+  # 文章分類
+  category_name: 分類名稱
+  parent_id: 父級分類
+  sort_order: 排序值
+  category_management: 文章分類管理
+
+  # 文章
+  title: 文章標題
+  description: 文章描述
+  thumbnail: 縮略圖
+  content: 文章內容
+  author: 作者
+  category: 分類
+  article_management: 文章管理
+
+  # 通用
+  create_time: 創建時間
+  update_time: 更新時間
+  no_category: 無分類
+  top_category: 頂級分類
+menu:
+  article_category:
+    list: 文章分类列表
+    detail: 文章分类详情
+    create: 新增文章分类
+    update: 修改文章分类
+    delete: 删除文章分类
+    recovery: 恢复文章分类
+    realDelete: 清空回收站
+  article:
+    list: 文章分类列表
+    detail: 文章分类详情
+    create: 新增文章分类
+    update: 修改文章分类
+    delete: 删除文章分类
+    recovery: 恢复文章分类
+    realDelete: 清空回收站

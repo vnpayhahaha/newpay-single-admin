@@ -1,0 +1,119 @@
+/**
+ * 会员通知管理 API
+ */
+import type { ResponseStruct } from '#/global'
+
+/**
+ * 会员通知对象
+ */
+export interface MemberNoticeVo {
+  id: number
+  title: string
+  type: number
+  type_text?: string
+  content: string
+  member_id: number
+  click_num: number
+  created_by: number
+  updated_by: number
+  remark?: string
+  created_at: string
+  updated_at: string
+}
+
+/**
+ * 分页响应对象
+ */
+export interface MemberNoticePageResponse {
+  data: MemberNoticeVo[]
+  total: number
+  current_page: number
+  per_page: number
+  last_page: number
+}
+
+/**
+ * 获取通知列表（分页）
+ */
+export function page(params: {
+  page?: number
+  page_size?: number
+  title?: string
+  type?: number
+  member_id?: number
+  start_time?: string
+  end_time?: string
+}): Promise<ResponseStruct<MemberNoticePageResponse>> {
+  return useHttp().get('/admin/member_notice/list', { params })
+}
+
+/**
+ * 获取通知详情
+ */
+export function read(id: number): Promise<ResponseStruct<MemberNoticeVo>> {
+  return useHttp().get(`/admin/member_notice/${id}`)
+}
+
+/**
+ * 创建单个通知
+ */
+export function save(data: {
+  title: string
+  type: number
+  content: string
+  member_id?: number
+  remark?: string
+}): Promise<ResponseStruct<MemberNoticeVo>> {
+  return useHttp().post('/admin/member_notice', data)
+}
+
+/**
+ * 批量创建通知
+ */
+export function batchCreate(data: {
+  title: string
+  type: number
+  content: string
+  member_ids: number[]
+  remark?: string
+}): Promise<ResponseStruct<{ count: number }>> {
+  return useHttp().post('/admin/member_notice/batch', data)
+}
+
+/**
+ * 发送全体通知（广播）
+ */
+export function broadcast(data: {
+  title: string
+  type: number
+  content: string
+  remark?: string
+}): Promise<ResponseStruct<MemberNoticeVo>> {
+  return useHttp().post('/admin/member_notice/broadcast', data)
+}
+
+/**
+ * 更新通知
+ */
+export function update(id: number, data: {
+  title?: string
+  type?: number
+  content?: string
+  remark?: string
+}): Promise<ResponseStruct<null>> {
+  return useHttp().put(`/admin/member_notice/${id}`, data)
+}
+
+/**
+ * 删除单个通知
+ */
+export function remove(id: number): Promise<ResponseStruct<null>> {
+  return useHttp().delete(`/admin/member_notice/${id}`)
+}
+
+/**
+ * 批量删除通知
+ */
+export function batchDelete(ids: number[]): Promise<ResponseStruct<{ deleted_count: number }>> {
+  return useHttp().delete('/admin/member_notice/batch', { data: { ids } })
+}

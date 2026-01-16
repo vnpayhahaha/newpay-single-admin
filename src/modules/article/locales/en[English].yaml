@@ -1,0 +1,39 @@
+# Article Management Module
+article:
+  # Article Category
+  category_name: Category Name
+  parent_id: Parent Category
+  sort_order: Sort Order
+  category_management: Article Category Management
+
+  # Article
+  title: Title
+  description: Description
+  thumbnail: Thumbnail
+  content: Content
+  author: Author
+  category: Category
+  article_management: Article Management
+
+  # Common
+  create_time: Create Time
+  update_time: Update Time
+  no_category: No Category
+  top_category: Top Category
+menu:
+  article_category:
+    list: Article Category
+    detail: Article Category Detail
+    create: Article Category Create
+    update: Article Category Update
+    delete: Article Category Delete
+    recovery: recovery
+    realDelete: realDelete
+  article:
+    list: Article list
+    detail: Article Detail
+    create: Article Create
+    update: Article Update
+    delete: Article Delete
+    recovery: Article recovery
+    realDelete: Article realDelete

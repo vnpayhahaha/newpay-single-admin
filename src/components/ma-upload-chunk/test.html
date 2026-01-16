@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分片上传组件测试</title>
+</head>
+<body>
+  <div id="app">
+    <h1>分片上传组件测试</h1>
+    
+    <h2>接口参数验证</h2>
+    <p>当前组件发送的参数包括：</p>
+    <ul>
+      <li><strong>index</strong>: 分片索引（从1开始）</li>
+      <li><strong>fileId</strong>: 文件唯一标识</li>
+      <li><strong>total</strong>: 总分片数</li>
+      <li><strong>fileName</strong>: 文件名</li>
+      <li><strong>fileSize</strong>: 文件总大小</li>
+      <li><strong>fileHash</strong>: 文件MD5哈希值</li>
+      <li><strong>fileType</strong>: 文件类型</li>
+      <li><strong>file</strong>: 分片文件数据（Blob）</li>
+    </ul>
+
+    <h2>使用方式</h2>
+    <pre><code>&lt;MaUploadChunk
+  action="/api/upload/chunk"
+  :chunk-size="2 * 1024 * 1024"
+  :max-files="5"
+  :concurrency="3"
+  :retry-count="3"
+  @upload-success="onUploadSuccess"
+/&gt;</code></pre>
+
+    <h2>接口要求</h2>
+    <p>服务端接口需要处理以下FormData参数：</p>
+    <pre><code>POST /api/upload/chunk
+Content-Type: multipart/form-data
+
+{
+  file: Blob,          // 分片文件数据
+  fileId: string,      // 文件唯一标识
+  index: number,       // 分片索引(从1开始)
+  total: number,       // 总分片数
+  fileName: string,    // 文件名
+  fileSize: number,    // 文件总大小
+  fileHash: string,    // 文件MD5哈希值
+  fileType: string,    // 文件类型
+}
+
+// 成功响应
+{
+  code: 200,
+  data: {
+    // 最后一个分片时返回完整文件信息
+    url: 'https://example.com/file.pdf',
+    size: 1024000
+  },
+  message: 'success'
+}</code></pre>
+  </div>
+</body>
+</html>

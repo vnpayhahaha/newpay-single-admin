@@ -1,0 +1,173 @@
+Member:
+  lable: 会员管理
+  username: 用户名
+  password: 密码
+  pin: PIN码
+  nickname: 用户昵称
+  phone: 手机号码
+  email: 邮箱
+  avatar: 用户头像
+  signed: 个人签名
+  status: 账号状态
+  in_sell: 可接收代收订单
+  remark: 备注
+  placeholder:
+    username: 请输入用户名
+    password: 请输入密码
+    password_edit: 不填写则不修改密码
+    pin: "请输入PIN码(4-6位数字)"
+    nickname: 请输入用户昵称
+    phone: 请输入手机号码
+    email: 请输入邮箱
+    signed: 请输入个人签名
+    remark: 请输入备注信息
+  rules:
+    username_required: 请输入用户名
+    username_length: 用户名长度在 3 到 30 个字符
+    password_required: 请输入密码
+    password_length: 密码长度在 6 到 32 个字符
+    pin_pattern: PIN码必须是4-6位数字
+    nickname_required: 请输入用户昵称
+    phone_required: 请输入手机号码
+    phone_pattern: "请输入正确的印度手机号码(10位数字)"
+    email_pattern: 请输入正确的邮箱格式
+    status_required: 请选择账号状态
+  status_options:
+    normal: 正常
+    disabled: 停用
+  yes_no:
+    yes: 是
+    no: 否
+MemberAccount:
+  lable: 会员账号
+  member_id: 客户ID
+  balance_available: 可用余额
+  balance_frozen: 冻结金额
+  created_at: 创建时间
+  updated_at: 更新时间
+MemberAccountRecord:
+  lable: 会员账号记录
+  member_id: 客户ID
+  member_account_id: 关联客户账户ID
+  change_amount: "变更金额"
+  balance_available_before: 变更前余额
+  balance_available_after: 变更后余额
+  balance_frozen_before: 变更前冻结金额
+  balance_frozen_after: 变更后冻结金额
+  type: 类型
+  transaction_no: 关联交易流水号
+  created_at: 记录创建时间
+  type_enum:
+    deposit: 充值
+    withdraw: 提现
+    payout: 代付
+    collection: 代收
+    direct_reward: 直接奖励
+    superior_reward: 上级奖励
+    indirect_reward: 间接奖励
+    admin_add: 管理员添加
+    admin_deduct: 管理员减扣
+    other_fees: 其他手续费
+MemberLoginLog:
+  lable: 会员登录日志
+  member_id: 客户ID
+  username: 用户名
+  ip: 登录IP地址
+  os: 操作系统
+  browser: 浏览器
+  status: 登录状态
+  message: 提示消息
+  login_time: 登录时间
+  remark: 备注
+  status_enum:
+    success: 成功
+    failed: 失败
+MemberOperationLog:
+  lable: 会员操作日志
+  member_id: 客户ID
+  username: 用户名
+  method: 请求方式
+  router: 请求路由
+  service_name: 业务名称
+  ip: 请求IP地址
+  created_at: 创建时间
+  updated_at: 更新时间
+  remark: 备注
+  request_params: 请求参数
+  response_status: 响应状态码
+  is_success: 操作是否成功
+  response_data: 响应数据
+  request_id: uuid
+  request_duration: 请求耗时(毫秒)
+  success_enum:
+    success: 成功
+    failed: 失败
+MemberTronApply:
+  lable: 会员申请
+  tron_address: 收款地址
+  amount: 金额
+  confirm_amount: 确认金额
+  confirm_time: 确认时间
+  remark: 备注
+  status: 充值状态
+  type: 类型
+  member_id: 客户ID
+  created_at: 创建时间
+  updated_at: 更新时间
+  status_enum:
+    pending: 待确认
+    confirmed: 已确认
+    cancelled: 已取消
+    expired: 已失效
+  type_enum:
+    deposit: 充值
+    withdraw: 提现
+MemberTronTransactionRecord:
+  lable: 会员交易记录
+  transaction_id: 交易hash
+  symbol: 代币符号
+  token_address: 代币合约地址
+  decimals: 代币精度
+  token_name: 代币名称
+  block_timestamp: 交易时间戳
+  from_address: 转出地址
+  to_address: 转入地址
+  transaction_type: 交易类型
+  amount: 交易金额
+  member_id: 客户ID
+  tron_apply_id: 申请ID
+  status: 状态
+  created_at: 创建时间
+  updated_at: 更新时间
+  status_enum:
+    pending_verification: 待核销
+    verified: 已核销
+    cancelled: 已取消
+    timeout: 已超时
+MemberNotice:
+  lable: 会员通知管理
+  title: 通知标题
+  type: 通知类型
+  content: 通知内容
+  receiver: 接收会员
+  member_id: 会员ID
+  click_num: 查看次数
+  created_at: 创建时间
+  updated_at: 更新时间
+  all_members: 全体会员
+  unknown: 未知
+  type_notice: 通知
+  type_announcement: 公告
+  create_success: 通知创建成功
+  update_success: 通知更新成功
+  confirm_delete: 确定删除此通知吗？
+  create_notice: 创建通知
+  edit_notice: 编辑通知
+  create_single_notice: 创建单个通知
+  broadcast_alert: 此通知将发送给所有会员
+  placeholder:
+    title: 请输入通知标题
+    content: 请输入通知内容
+    select_members: 选择接收会员（留空则发送给全体会员）
+  help:
+    member_selection: "说明：不选择会员 = 全体会员；选择一个会员 = 单个通知；选择多个会员 = 批量通知"

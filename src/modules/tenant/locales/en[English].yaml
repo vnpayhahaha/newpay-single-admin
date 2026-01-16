@@ -1,0 +1,293 @@
+tenant:
+  index: Tenant Management
+  tenantId: Tenant ID
+  contactUserName: Contact User Name
+  contactPhone: Contact Phone
+  companyName: Company Name
+  user_num_limit: Maximum number of users
+  app_num_limit: Maximum number of applications
+  isEnabled: Is Enabled
+  createdBy: createdBy
+  safeLevel: Safe Level
+  licenseNumber: License Number
+  address: address
+  intro: intro
+  domain: domain
+  settlement_type: settlement type
+  settlement_delay_days: settlement delay days
+  auto_transfer: auto transfer
+  receipt_fee_type: receipt fee type
+  receipt_fixed_fee: receipt fixed fee
+  receipt_fee_rate: receipt fee rate
+  payment_fee_type: payment fee type
+  payment_fixed_fee: payment fixed fee
+  payment_fee_rate: payment fee rate
+  limitHint: -1 represents unlimited
+  unlimited: Unlimited
+  is_payment: Is Enabled Payment
+  is_receipt: Is Enabled Collection
+  receipt_min_amount: Minimum receipt amount
+  receipt_max_amount: Maximum receipt amount
+  payment_min_amount: Minimum payment amount
+  payment_max_amount: Maximum payment amount
+  receipt_settlement_type: Receipt Settlement Type
+  upstream_enabled: Enable upstream collection
+  upstream_items: Upstream collection items
+  float_enabled: Enable amount floating
+  float_range: Amount fluctuation range
+  notify_range: Notify downstream of the amount range
+  auto_assign_enabled: Automatic payment allocation
+  receipt_expire_minutes: Collection order timeout
+  payment_expire_minutes: Payment order timeout
+  reconcile_retain_minutes: Bill reconciliation retention time
+  bill_delay_minutes: Bill delay time
+  card_acquire_type: Method of obtaining a bank card
+  auto_verify_fail_rate: Failure rate of automatic write-off
+  payment_assign_items: Payment automatic allocation item
+  collection_use_method: Collection method
+  cashier_template: Cashier Template
+tenantApp:
+  index: Tenant App
+  appName: APP Name
+  appKey: APP Key
+  appSecret: APP Secret
+  status: status
+  description: description
+  remark: remark
+  createdAt: created time
+  remarkPlaceholder: Please enter the remark
+  refreshAppKey: Refresh application key(Key)
+  refreshAppSecret: Refresh application secret(Secret)
+tenantUser:
+  index: Tenant members
+  avatar: Avatar
+  username: Username
+  phone: Phone Number
+  password: password
+  last_login_ip: Last Login IP
+  last_login_time: Last Login Time
+  status: status
+  is_enabled_google: Is Google authentication enabled
+  google_secret: Google verification key
+  is_bind_google: Is it bound to Google verification
+  created_by: created by
+  created_at: created time
+  updated_by: modified by
+  updated_at: modified time
+  deleted_by: deleted by
+  deleted_at: deleted time
+  ip_whitelist: IP whitelist
+  remark: Remark
+tenantConfig:
+  index: Tenant Config
+  groupCode: Group Code
+  code: Code
+  name: Name
+  content: Content
+  enabled: Enabled
+  intro: Intro
+  option: Options
+tenantAccount:
+  index: Tenant Account
+  all: All
+  account_id: Account ID
+  balance_available: balance available
+  balance_frozen: balance frozen
+  account_type: account type
+  version: version
+  created_at: created_at
+  updated_at: updated_at
+  add: Bonus points
+  sub: Minus points
+  freeze: Freeze
+  unfreeze: UnFreeze
+  addSuccess: Bonus points success
+  subSuccess: Minus points success
+  freezeSuccess: Freeze success
+  unfreezeSuccess: UnFreeze success
+  status_labels: #：1-订单成功 2-订单退款 3-人工加帐 4-人工减帐 5-冻结 6-解冻 7-转入 8-转出 9-冲正 10-反转 11-调整差错
+    1: Order Success
+    2: Order Refund
+    3: Artificial Addition
+    4: Artificial Subtraction
+    5: Freeze
+    6: Unfreeze
+    7: Transfer In
+    8: Transfer Out
+    9: Reverse
+    10: Reverse
+    11: Adjusting Differences
+tenantAccountRecord:
+  index: All Billing records
+  tenantAccountBillRecord: Tenant Billing records
+  tenant_id: Tenant ID
+  tenant_account_id: Associate tenant account ID
+  account_id: Account ID
+  account_type: Account Type
+  change_amount: Change amount
+  balance_available_before: Available balance (original)
+  balance_available_after: Available balance (new)
+  balance_frozen_before: Freeze balance (original)
+  balance_frozen_after: Freeze balance (new)
+  change_type: Change type
+  transaction_no: Transaction number
+  created_at: Trading Hours
+tenant_api_interface:
+  index: Interface Management
+  api_name: API Name
+  api_uri: API URI
+  http_method: HTTP Method
+  request_params: Request Parameters
+  request_params_en: Request Parameters(en)
+  request_example: Request Example
+  request_example_en: Request Example(en)
+  response_params: Response Parameters
+  response_params_en: Response Parameters(en)
+  response_example: Response Example
+  response_example_en: Response Example(en)
+  description: Description
+  description_en: Description(en)
+  status: Status
+  rate_limit: Rate Limit
+  auth_mode: Auth Mode
+  created_by: Created By
+  updated_by: Updated By
+  created_at: Created Time
+  updated_at: Updated Time
+tenant_notification_queue:
+  index: Callback Notification Queue
+  tenant_id: Tenant ID
+  app_id: Application ID
+  account_type: Account Type
+  collection_order_id: Collection Order ID
+  disbursement_order_id: Disbursement Order ID
+  notification_type: Notification Type
+  notification_url: Notification URL
+  request_method: Request Method
+  request_data: Request Data
+  execute_status: Execute Status
+  execute_count: Execute Count
+  next_execute_time: Next Execute Time
+  last_execute_time: Last Execute Time
+  error_message: Error Message
+  created_at: Created Time
+  updated_at: Updated Time
+  max_retry_count: Max Retry Count
+  lock_version: Lock Version
+  detail: Detail
+tenant_notification_record:
+  index: Notification Record
+  queue_id: Notification Queue ID
+  tenant_id: Tenant ID
+  app_id: Application ID
+  account_type: Account Type
+  collection_order_id: Collection Order ID
+  disbursement_order_id: Disbursement Order ID
+  notification_type: Notification Type
+  notification_url: Notification URL
+  request_method: Request Method
+  request_data: Request Data
+  response_status: Response Status
+  response_data: Response Data
+  execute_count: Execute Count
+  status: Execute Status
+  created_at: Created Time
+  updated_at: Updated Time
+  # Added translation keys
+  tenant_company: Tenant Company
+  app_name: Application Name
+  app_key: Application Key
+  basic_info: Basic Information
+  order_info: Order Details
+  order_type: Order Type
+  platform_order_no: Platform Order Number
+  merchant_order_no: Merchant Order Number
+  collection_order: Collection Order
+  disbursement_order: Disbursement Order
+  collection: Collection
+  disbursement: Disbursement
+  system_notification: System Notification
+  order_notification: Order Notification
+  bill_notification: Bill Notification
+  no_related_order: No Related Order
+  associated_order: Associated Order
+tenantMenu:
+  tenant:
+    list: Tenant list
+    create: Tenant create
+    update: Tenant updated
+    delete: Tenant delete
+    recovery: Tenant recovery
+    realDelete: Empty recycle Bin
+  tenantApp:
+    list: Tenant Application List
+    create: Add tenant application
+    update: Modify tenant application
+    delete: Delete tenant application
+    recovery: Tenant APP recovery
+    realDelete: Empty recycle Bin
+  tenantUser:
+    list: Tenant member list
+    create: Add new tenant members
+    update: Modify member information
+    delete: Delete tenant members
+    recovery: Tenant User recovery
+    realDelete: Empty recycle Bin
+  tenantConfig:
+    list: Tenant Config List
+    create: Add Tenant Config
+    update: Modify Tenant Config
+    delete: Delete Tenant Config
+  tenant_account:
+    list: Tenant Account List
+    create: Add Tenant Account
+    update: Modify Tenant Account
+    delete: Delete Tenant Account
+    change_balance_available: Change Balance Available
+    change_balance_frozen: Change Balance Frozen
+  tenant_account_record:
+    list: Billing records
+    create: Add Billing record
+    update: Modify Billing record
+    delete: Delete Billing record
+  tenant_api_interface:
+    list: Interface List
+    create: Add Interface
+    update: Modify Interface
+    delete: Delete Interface
+  tenant_notification_record:
+    list: Callback Record List
+    create: Add Callback Record
+    update: Modify Callback Record
+    delete: Delete Callback Record
+enums:
+  tenant:
+    isEnabled:
+      true: Enable
+      false: Disable
+  tenantApp:
+    status:
+      normal: normal
+      disabled: disabled
+  tenantAccount:
+    account_type:
+      collection: Collection
+      payment: Payment
+  tenantAccountRecord:
+    change_type:
+      transaction: Order successful
+      refund: Order refund
+      manual_add: manual_add
+      manual_sub: manual_sub
+      freeze: freeze
+      unfreeze: unfreeze
+      transfer_in: transfer_in
+      transfer_out: transfer_out
+      reverse: reverse
+      reversal: reversal
+      error_adjust: error_adjust
+crud:
+  collection:
+    edit: collection
+  disbursement:
+    edit: disbursement

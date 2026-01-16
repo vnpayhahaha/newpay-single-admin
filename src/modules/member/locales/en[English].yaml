@@ -1,0 +1,173 @@
+Member:
+  lable: Member Mananager
+  username: Username
+  password: Password
+  pin: PIN Code
+  nickname: Nickname
+  phone: Phone
+  email: Email
+  avatar: Avatar
+  signed: Signature
+  status: Status
+  in_sell: Accept Collection Orders
+  remark: Remark
+  placeholder:
+    username: Please enter username
+    password: Please enter password
+    password_edit: Leave blank to keep current password
+    pin: "Please enter PIN code (4-6 digits)"
+    nickname: Please enter nickname
+    phone: Please enter phone number
+    email: Please enter email
+    signed: Please enter signature
+    remark: Please enter remark
+  rules:
+    username_required: Please enter username
+    username_length: Username length should be 3 to 30 characters
+    password_required: Please enter password
+    password_length: Password length should be 6 to 32 characters
+    pin_pattern: PIN code must be 4-6 digits
+    nickname_required: Please enter nickname
+    phone_required: Please enter phone number
+    phone_pattern: "Please enter a valid Indian phone number (10 digits)"
+    email_pattern: Please enter a valid email address
+    status_required: Please select status
+  status_options:
+    normal: Normal
+    disabled: Disabled
+  yes_no:
+    yes: Yes
+    no: No
+MemberAccount:
+  lable: Member Account
+  member_id: Member ID
+  balance_available: Available Balance
+  balance_frozen: Frozen Balance
+  created_at: Created At
+  updated_at: Updated At
+MemberAccountRecord:
+  lable: Member Account Record
+  member_id: Member ID
+  member_account_id: Member Account ID
+  change_amount: "Change Amount"
+  balance_available_before: Balance Before
+  balance_available_after: Balance After
+  balance_frozen_before: Frozen Balance Before
+  balance_frozen_after: Frozen Balance After
+  type: Type
+  transaction_no: Transaction No
+  created_at: Record Created At
+  type_enum:
+    deposit: Deposit
+    withdraw: Withdraw
+    payout: Payout
+    collection: Collection
+    direct_reward: Direct Reward
+    superior_reward: Superior Reward
+    indirect_reward: Indirect Reward
+    admin_add: Admin Add
+    admin_deduct: Admin Deduct
+    other_fees: Other Fees
+MemberLoginLog:
+  lable: Member Login Log
+  member_id: Member ID
+  username: Username
+  ip: Login IP Address
+  os: Operating System
+  browser: Browser
+  status: Login Status
+  message: Message
+  login_time: Login Time
+  remark: Remark
+  status_enum:
+    success: Success
+    failed: Failed
+MemberOperationLog:
+  lable: Member Operation Log
+  member_id: Member ID
+  username: Username
+  method: Request Method
+  router: Request Route
+  service_name: Service Name
+  ip: Request IP Address
+  created_at: Created At
+  updated_at: Updated At
+  remark: Remark
+  request_params: Request Parameters
+  response_status: Response Status
+  is_success: Operation Success
+  response_data: Response Data
+  request_id: UUID
+  request_duration: Request Duration (ms)
+  success_enum:
+    success: Success
+    failed: Failed
+MemberTronApply:
+  lable: Member Tron Apply
+  tron_address: Receiving Address
+  amount: Amount
+  confirm_amount: Confirmed Amount
+  confirm_time: Confirm Time
+  remark: Remark
+  status: Recharge Status
+  type: Type
+  member_id: Member ID
+  created_at: Created At
+  updated_at: Updated At
+  status_enum:
+    pending: Pending
+    confirmed: Confirmed
+    cancelled: Cancelled
+    expired: Expired
+  type_enum:
+    deposit: Deposit
+    withdraw: Withdraw
+MemberTronTransactionRecord:
+  lable: Member Tron Transaction Record
+  transaction_id: Transaction Hash
+  symbol: Token Symbol
+  token_address: Token Contract Address
+  decimals: Token Decimals
+  token_name: Token Name
+  block_timestamp: Block Timestamp
+  from_address: From Address
+  to_address: To Address
+  transaction_type: Transaction Type
+  amount: Transaction Amount
+  member_id: Member ID
+  tron_apply_id: Apply ID
+  status: Status
+  created_at: Created At
+  updated_at: Updated At
+  status_enum:
+    pending_verification: Pending Verification
+    verified: Verified
+    cancelled: Cancelled
+    timeout: Timeout
+MemberNotice:
+  lable: Member Notice Management
+  title: Notice Title
+  type: Notice Type
+  content: Notice Content
+  receiver: Receiver
+  member_id: Member ID
+  click_num: View Count
+  created_at: Created At
+  updated_at: Updated At
+  all_members: All Members
+  unknown: Unknown
+  type_notice: Notice
+  type_announcement: Announcement
+  create_success: Notice created successfully
+  update_success: Notice updated successfully
+  confirm_delete: Are you sure to delete this notice?
+  create_notice: Create Notice
+  edit_notice: Edit Notice
+  create_single_notice: Create Single Notice
+  broadcast_alert: This notice will be sent to all members
+  placeholder:
+    title: Please enter notice title
+    content: Please enter notice content
+    select_members: Select members (leave blank to send to all members)
+  help:
+    member_selection: "Note: No selection = All members; Single selection = Single notice; Multiple selections = Batch notice"
