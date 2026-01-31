@@ -10,16 +10,8 @@
 
 import type { MaSearchItem } from "@mineadmin/search";
 import { selectStatus } from "@/modules/Common";
-import { ChannelDictVo, remote } from "~/channel/api/Channel.ts";
-import {
-  BankAccountDictVo,
-  remote as bankAccountRemote,
-} from "~/channel/api/BankAccount.ts";
-import {
-  ChannelAccountDictVo,
-  remote as channelAccountRemote,
-} from "~/channel/api/ChannelAccount.ts";
 import { TenantDictVo, remote as tenantRemote } from "~/tenant/api/Tenant.ts";
+
 export default function getSearchItems(
   t: any,
   hideStatus: boolean = false
@@ -84,55 +76,19 @@ export default function getSearchItems(
       },
     },
     {
-      label: () => t("collection_order.collection_channel_id"),
-      prop: "collection_channel_id",
-      render: () => <ma-remote-select filterable />,
+      label: () => t("collection_order.device_id"),
+      prop: "device_id",
+      render: () => <el-input type="number" />,
       renderProps: {
-        api: () =>
-          new Promise((resolve) => resolve(remote({ support_collection: 1 }))),
-        dataHandle: (response: any) => {
-          return response.data?.map((item: ChannelDictVo) => {
-            return { label: `${item.channel_name}`, value: item.id };
-          });
-        },
-        placeholder: t("collection_order.collection_channel_id"),
+        placeholder: t("collection_order.device_id"),
       },
     },
     {
-      label: () => t("collection_order.bank_account"),
-      prop: "bank_account_id",
-      render: () => <ma-remote-select filterable />,
+      label: () => t("collection_order.member_id"),
+      prop: "member_id",
+      render: () => <el-input type="number" />,
       renderProps: {
-        api: () =>
-          new Promise((resolve) =>
-            resolve(bankAccountRemote({ support_collection: 1 }))
-          ),
-        dataHandle: (response: any) => {
-          return response.data?.map((item: BankAccountDictVo) => {
-            return {
-              label: `${item.account_holder} [${item.account_number}]`,
-              value: item.id,
-            };
-          });
-        },
-        placeholder: t("collection_order.bank_account"),
-      },
-    },
-    {
-      label: () => t("collection_order.channel_account"),
-      prop: "channel_account_id",
-      render: () => <ma-remote-select filterable />,
-      renderProps: {
-        api: () =>
-          new Promise((resolve) =>
-            resolve(channelAccountRemote({ support_collection: 1 }))
-          ),
-        dataHandle: (response: any) => {
-          return response.data?.map((item: ChannelAccountDictVo) => {
-            return { label: `${item.merchant_id}`, value: item.id };
-          });
-        },
-        placeholder: t("collection_order.channel_account"),
+        placeholder: t("collection_order.member_id"),
       },
     },
     {
@@ -278,22 +234,6 @@ export default function getSearchItems(
       render: () => <el-input />,
       renderProps: {
         placeholder: t("collection_order.payer_upi"),
-      },
-    },
-    // {
-    //   label: () => t("collection_order.status"),
-    //   prop: "status",
-    //   render: () => <el-input />,
-    //   renderProps: {
-    //     placeholder: t("collection_order.status"),
-    //   },
-    // },
-    {
-      label: () => t("collection_order.channel_transaction_no"),
-      prop: "channel_transaction_no",
-      render: () => <el-input />,
-      renderProps: {
-        placeholder: t("collection_order.channel_transaction_no"),
       },
     },
     {

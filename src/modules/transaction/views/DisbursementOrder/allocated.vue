@@ -25,7 +25,6 @@ import { useMessage } from '@/hooks/useMessage.ts'
 import { ResultCode } from '@/utils/ResultCode.ts'
 
 import WriteOffForm from './WriteOffForm.vue'
-import DistributeForm from './DistributeForm.vue'
 import type { DisbursementOrderDataVo } from '~/transaction/api/DisbursementOrder.ts'
 import tool from '@/utils/tool.ts'
 
@@ -33,7 +32,6 @@ defineOptions({ name: 'transaction:disbursement_order' })
 
 const proTableRef = ref<MaProTableExpose>() as Ref<MaProTableExpose>
 const writeOffFormRef = ref()
-const distributeFormRef = ref()
 const setFormRef = ref()
 const selections = ref<any[]>([])
 const i18n = useTrans() as TransType
@@ -71,36 +69,6 @@ const writeOffDialog: UseDialogExpose = useDialog({
           })
   },
 })
-const distributeDialog: UseDialogExpose = useDialog({
-  // 保存数据
-  ok: (_, okLoadingState: (state: boolean) => void) => {
-    okLoadingState(true)
-    const elForm = distributeFormRef.value.maForm.getElFormRef()
-    // 验证通过后
-    elForm
-      .validate()
-      .then(() => {
-        distributeFormRef.value
-          .distributeHandle()
-          .then((res: any) => {
-            res.code === 200
-              ? msg.success(t('crud.updateSuccess'))
-              : msg.error(res.message)
-            distributeDialog.close()
-            proTableRef.value.refresh()
-          })
-          .catch((err: any) => {
-            msg.alertError(err.response.data?.message)
-          }).finally(() => {
-            okLoadingState(false)
-          })
-      })
-      .catch().finally(() => {
-            okLoadingState(false)
-          })
-  },
-})
-const checkboxGroupAllocation = ref([])
 const responseTableData = ref<DisbursementOrderDataVo>({
   list: [],
   total: 0,
@@ -170,21 +138,8 @@ const schema = ref<MaProTableSchema>({
   // 搜索项
   searchItems: getSearchItems(t, true),
   // 表格列
-  tableColumns: getTableColumns(writeOffDialog, distributeDialog, t),
+  tableColumns: getTableColumns(writeOffDialog, t),
 })
-const allocationOptions = ref([
-  { label: t('disbursement_order.undistributed'), value: 1 },
-  { label: t('disbursement_order.distributed'), value: 2 },
-])
-
-function handleCheckedAllocationChange(val) {
-  proTableRef.value.setRequestParams(
-    {
-      allocation: val,
-    },
-    true,
-  )
-}
 
 // 批量取消
 function handleCancel() {
@@ -227,18 +182,6 @@ const middleStatisticsHtml = computed(() => {
           {{ t("crud.cancel") }}
         </el-button>
         <NmSearch :proxy="proTableRef" :row="2" />
-        <el-checkbox-group
-          v-model="checkboxGroupAllocation"
-          :max="1"
-          @change="handleCheckedAllocationChange"
-        >
-          <el-checkbox-button
-            v-for="option in allocationOptions"
-            :key="option.value"
-            :label="option.label"
-            :value="option.value"
-          />
-        </el-checkbox-group>
       </template>
     </MaProTable>
 
@@ -246,12 +189,6 @@ const middleStatisticsHtml = computed(() => {
       <template #default="{ data }">
         <!-- 新增、编辑表单 -->
         <WriteOffForm ref="writeOffFormRef" :data="data" />
-      </template>
-    </component>
-    <component :is="distributeDialog.Dialog">
-      <template #default="{ data }">
-        <!-- 新增、编辑表单 -->
-        <DistributeForm ref="distributeFormRef" :data="data" />
       </template>
     </component>
   </div>

@@ -13,12 +13,14 @@ export interface DisbursementOrderVo {
   pay_time: string;
   // 订单来源:App-API 管理后台 导入
   order_source: string;
-  // 代付渠道D
-  disbursement_channel_id: number;
-  channel_type: number;
-  // 代付银行卡ID
-  bank_account_id: number;
-  channel_account_id: number;
+  // 设备ID
+  device_id: number;
+  // 关联指令ID
+  command_id: number | null;
+  // 关联指令编号
+  command_no: string | null;
+  // 会员ID
+  member_id: number;
   // 订单金额
   amount: string;
   // 固定手续费
@@ -80,33 +82,10 @@ export interface DisbursementOrderVo {
   //
   updated_at: string;
   transaction_voucher_id: number;
-  bank_account: {
-    //
-    id: number;
-    // 银行名称
-    branch_name: string;
-  } | null;
-  channel_account: {
-    id: number;
-    merchant_id: string;
-  } | null;
-  channel: {
-    channel_code: string;
-    channel_icon: string;
-    channel_name: string;
-    id: number;
-  };
   cancel_operator: {
     id: number;
     username: string;
     nickname: string;
-  } | null;
-  down_bill_template_id: string;
-  bank_disbursement_download: {
-    id: number;
-    file_name: string;
-    hash: string;
-    suffix: string;
   } | null;
   created_customer: {
     id: number;
@@ -189,41 +168,20 @@ export function writeOff(
   );
 }
 
-// distribute
-export interface DistributerVo {
-  disbursement_channel_id: number;
-  channel_type: number;
-  channel_account_id?: number;
-  bank_account_id?: number;
-  ids: number[];
-}
-export function distribute(data: DistributerVo): Promise<ResponseStruct<null>> {
-  return useHttp().put(
-    `/admin/transaction/disbursement_order/distribute`,
-    data
-  );
-}
-
-// 获取下载表单 blod响应 /admin/transaction/disbursement_order/download_bank_bill
-export function downloadBankBill(
-  ids: number[],
-  bill_template_id: string
-): Promise<ResponseStruct<Blob>> {
-  return useHttp().request({
-    url: "/admin/transaction/disbursement_order/download_bank_bill",
-    data: {
-      ids,
-      bill_template_id,
-    },
-    method: "post",
-    timeout: 60 * 1000,
-    responseType: "blob",
-  });
-}
-
 // 付款订单手动回调
 export function notify(id: number): Promise<ResponseStruct<null>> {
   return useHttp().get(
     `/admin/transaction/disbursement_order/manual_notify/${id}`
   );
+}
+
+// 分配订单到设备
+export interface DistributeParams {
+  ids: number[];
+  device_id: number;
+  member_id?: number;
+}
+
+export function distribute(data: DistributeParams): Promise<ResponseStruct<null>> {
+  return useHttp().put("/admin/transaction/disbursement_order/distribute", data);
 }

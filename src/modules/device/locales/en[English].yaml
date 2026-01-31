@@ -1,0 +1,86 @@
+device:
+  index: Device Management
+device_command:
+  index: Command Queue
+  command_no: Command No
+  device_id: Device ID
+  command_type: Command Type
+  business_type: Business Type
+  order_id: Order ID
+  order_no: Order No
+  command_data: Command Data
+  priority: Priority
+  status: Status
+  retry_count: Retry Count
+  max_retry: Max Retry
+  timeout_seconds: Timeout (s)
+  scheduled_at: Scheduled At
+  sent_at: Sent At
+  started_at: Started At
+  completed_at: Completed At
+  expire_at: Expire At
+  error_code: Error Code
+  error_message: Error Message
+  lock_version: Lock Version
+  created_at: Created At
+  updated_at: Updated At
+  retry: Retry
+  cancel: Cancel
+  detail: Detail
+  result_list: Execution Results
+  no_result: No execution results
+  retry_confirm: Are you sure to retry this command?
+  cancel_confirm: Are you sure to cancel this command?
+  retry_success: Command retry success
+  cancel_success: Command cancel success
+  command_type_options:
+    1: Collection Pay
+    2: Disbursement Pay
+    3: Check Balance
+    4: Screenshot
+  business_type_options:
+    1: Collection
+    2: Disbursement
+  status_options:
+    1: Pending
+    2: Sent
+    3: Executing
+    4: Success
+    5: Failed
+    6: Timeout
+    7: Cancelled
+device_command_result:
+  index: Execution Results
+  result_no: Result No
+  command_id: Command ID
+  command_no: Command No
+  device_id: Device ID
+  result_type: Result Type
+  result_code: Result Code
+  result_message: Result Message
+  result_data: Result Data
+  utr: UTR
+  paid_amount: Paid Amount
+  screenshot_url: Screenshot URL
+  raw_data: Raw Data
+  execution_time: Execution Time (ms)
+  process_status: Process Status
+  process_result: Process Result
+  processed_at: Processed At
+  created_at: Created At
+  result_type_options:
+    1: Success
+    2: Failed
+    3: Timeout
+    4: Partial Success
+  process_status_options:
+    1: Pending
+    2: Processing
+    3: Processed
+    4: Process Failed
+menu:
+  device_command:
+    list: Command Queue List
+    update: Command Management
+  device_command_result:
+    list: Result List

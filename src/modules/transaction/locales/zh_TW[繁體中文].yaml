@@ -195,8 +195,17 @@ disbursement_order:
   undistributed: 未分配
   distributed: 已分配
   distribute: 分配
-  query_total: 查询总数
-  write_off: 核销
+  distribute_success: 分配成功
+  selected_orders: 已選訂單
+  orders_selected: 個訂單
+  device_id: 設備ID
+  device_id_required: 請輸入設備ID
+  member_id: 會員ID
+  member_id_placeholder: 可選，留空則不指定會員
+  command_id: 指令ID
+  command_no: 指令編號
+  query_total: 查詢總數
+  write_off: 核銷
   downloadBankBillMessage: 银行账单下载
   downloadBankBillSuccess: 银行账单下载成功
   downloadBankBillError: 請求服務器錯誤，下載失敗

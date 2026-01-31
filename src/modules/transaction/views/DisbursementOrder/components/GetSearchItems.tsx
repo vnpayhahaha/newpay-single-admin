@@ -10,16 +10,11 @@
 
 import type { MaSearchItem } from "@mineadmin/search";
 import { selectStatus } from "@/modules/Common";
-import { ChannelDictVo, remote } from "~/channel/api/Channel.ts";
-import {
-  ChannelAccountDictVo,
-  remote as channelAccountRemote,
-} from "~/channel/api/ChannelAccount.ts";
 import { TenantDictVo, remote as tenantRemote } from "~/tenant/api/Tenant.ts";
+
 export default function getSearchItems(
   t: any,
   hideStatus: boolean = false,
-  isChannelTypeBank: boolean = false,
 ): MaSearchItem[] {
   const searchItems: MaSearchItem[] = [
     {
@@ -63,43 +58,19 @@ export default function getSearchItems(
       },
     },
     {
-      label: () => t("disbursement_order.disbursement_channel_id"),
-      prop: "channel_id",
-      render: () => <ma-remote-select filterable />,
+      label: () => t("disbursement_order.device_id"),
+      prop: "device_id",
+      render: () => <el-input type="number" />,
       renderProps: {
-        api: () =>
-          new Promise((resolve) => {
-              if (isChannelTypeBank) {
-              return  resolve(remote({ support_disbursement: 1, channel_type: 1 }))
-              } else {
-              return  resolve(remote({ support_disbursement: 1 }))
-              }
-            }
-          ),
-        dataHandle: (response: any) => {
-          return response.data?.map((item: ChannelDictVo) => {
-            return { label: `${item.channel_name}`, value: item.id };
-          });
-        },
-        placeholder: t("disbursement_order.disbursement_channel_id"),
+        placeholder: t("disbursement_order.device_id"),
       },
     },
     {
-      label: () => t("disbursement_order.channel_account"),
-      prop: "channel_account_id",
-      render: () => <ma-remote-select filterable />,
+      label: () => t("disbursement_order.member_id"),
+      prop: "member_id",
+      render: () => <el-input type="number" />,
       renderProps: {
-        api: () =>
-          new Promise((resolve) =>
-            resolve(channelAccountRemote({ support_disbursement: 1 }))
-          ),
-        dataHandle: (response: any) => {
-          return response.data?.map((item: ChannelAccountDictVo) => {
-            return { label: `${item.merchant_id}`, value: item.id };
-          });
-        },
-        placeholder: t("disbursement_order.channel_account"),
-        disabled: isChannelTypeBank
+        placeholder: t("disbursement_order.member_id"),
       },
     },
     {
@@ -240,22 +211,6 @@ export default function getSearchItems(
       },
     },
     {
-      label: () => t("disbursement_order.expire_time"),
-      prop: "expire_time",
-      render: () => <el-input />,
-      renderProps: {
-        placeholder: t("disbursement_order.expire_time"),
-      },
-    },
-    {
-      label: () => t("disbursement_order.channel_transaction_no"),
-      prop: "channel_transaction_no",
-      render: () => <el-input />,
-      renderProps: {
-        placeholder: t("disbursement_order.channel_transaction_no"),
-      },
-    },
-    {
       label: () => t("disbursement_order.request_id"),
       prop: "request_id",
       render: () => <el-input />,
@@ -273,24 +228,6 @@ export default function getSearchItems(
         api: () =>
           new Promise((resolve) =>
             resolve(selectStatus("disbursement_order", "status_list"))
-          ),
-        dataHandle: (response: any) => {
-          return response.data?.map((item: Common.StatusOptionItem) => {
-            return { label: `${item.label}`, value: item.value };
-          });
-        },
-      },
-    });
-  }
-  if (!isChannelTypeBank) {
-    searchItems.push({
-      label: () => t("disbursement_order.channel_type"),
-      prop: "channel_type",
-      render: () => <ma-remote-select filterable />,
-      renderProps: {
-        api: () =>
-          new Promise((resolve) =>
-            resolve(selectStatus("disbursement_order", "channel_type_list"))
           ),
         dataHandle: (response: any) => {
           return response.data?.map((item: Common.StatusOptionItem) => {

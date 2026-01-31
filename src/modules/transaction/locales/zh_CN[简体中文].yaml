@@ -196,6 +196,15 @@ disbursement_order:
   undistributed: 未分配
   distributed: 已分配
   distribute: 分配
+  distribute_success: 分配成功
+  selected_orders: 已选订单
+  orders_selected: 个订单
+  device_id: 设备ID
+  device_id_required: 请输入设备ID
+  member_id: 会员ID
+  member_id_placeholder: 可选，留空则不指定会员
+  command_id: 指令ID
+  command_no: 指令编号
   query_total: 查询总数
   write_off: 核销
   downloadBankBillMessage: 银行账单下载

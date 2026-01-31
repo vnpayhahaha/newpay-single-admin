@@ -22,7 +22,6 @@ import { selectStatus } from "@/modules/Common";
 import { trim } from "lodash-es";
 export default function getTableColumns(
   dialog: UseDialogExpose,
-  distributeDialog: UseDialogExpose,
   t: any,
   isBankStatement: boolean = false
 ): MaProTableColumns[] {
@@ -125,69 +124,14 @@ export default function getTableColumns(
     },
     // 普通列
     {
-      label: () => t("disbursement_order.channel"),
-      prop: "channel",
-      width: 220,
-      cellRender: ({ row }) => {
-        return (
-          <div
-            class="text-align-left"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <el-avatar shape="square" src={row.channel?.channel_icon || ""} />
-            {row.disbursement_channel_id > 0 ? (
-              <div class="ml-5" style={{ flex: 1, minWidth: 0 }}>
-                <p>
-                  <el-text
-                    class="mx-1"
-                    type={row.channel_type === 1 ? "primary" : "danger"}
-                  >
-                    {row.channel?.channel_code || ""}
-                  </el-text>
-                </p>
-                <p>
-                  <el-text class="mx-1" truncated>
-                    {row.channel?.channel_name || ""}
-                  </el-text>
-                </p>
-                {row.channel_account?.member_id && (
-                  <p>
-                    <el-text class="mx-1" truncated>
-                      {row.channel_account?.member_id || ""}
-                    </el-text>
-                  </p>
-                )}
-              </div>
-            ) : (
-              <div class="ml-5" style={{ flex: 1, minWidth: 0 }}>
-                <p>
-                  <el-text class="mx-1" type="primary">
-                    {t("disbursement_order.undistributed")}
-                  </el-text>
-                </p>
-              </div>
-            )}
-          </div>
-        );
-      },
+      label: () => t("disbursement_order.device_id"),
+      prop: "device_id",
+      width: 100,
     },
     {
-      label: () => t("disbursement_order.channel_type"),
-      prop: "channel_type",
-      minWidth: "100px",
-      hide: true,
-    },
-    {
-      label: () => t("disbursement_order.disbursement_channel_id"),
-      prop: "disbursement_channel_id",
-      minWidth: "120px",
-      hide: true,
-    },
-    {
-      label: () => t("disbursement_order.bank_account_id"),
-      prop: "bank_account_id",
-      minWidth: "120px",
-      hide: true,
+      label: () => t("disbursement_order.member_id"),
+      prop: "member_id",
+      width: 100,
     },
     {
       label: () => t("disbursement_order.order_no"),
@@ -728,49 +672,6 @@ export default function getTableColumns(
       minWidth: 180,
       hide: true,
     },
-    {
-      label: () => t("disbursement_order.bank_disbursement_download"),
-      prop: "bank_disbursement_download",
-      width: 300,
-      cellRender: ({ row }) => {
-        return (
-          <div
-            class="text-align-left"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <div style={{ flex: 1, minWidth: 0 }}>
-              {row.bank_disbursement_download && (
-                <>
-                  {" "}
-                  <p style={{ wordBreak: "break-all", whiteSpace: "normal" }}>
-                    <span
-                      class="cursor-pointer text-blue-600 hover:text-blue-800"
-                      onClick={() =>
-                        router.push({
-                          path: "/transaction/BankDisbursementDownload",
-                          query: { hash: row.bank_disbursement_download.hash },
-                        })
-                      }
-                    >
-                      {row.bank_disbursement_download.hash}
-                    </span>
-                  </p>
-                  <p style={{ wordBreak: "break-all", whiteSpace: "normal" }}>
-                    <MaCopy
-                      content={
-                        row.bank_disbursement_download.file_name +
-                        "." +
-                        row.bank_disbursement_download.suffix
-                      }
-                    />
-                  </p>
-                </>
-              )}
-            </div>
-          </div>
-        );
-      },
-    },
     // 操作列
     {
       type: "operation",
@@ -783,27 +684,12 @@ export default function getTableColumns(
         fold: 2,
         actions: [
           {
-            name: "distribute",
-            icon: "i-material-symbols:account-tree-outline",
-            show: ({ row }) =>
-              showBtn("transaction:disbursement_order:update", row),
-            disabled: ({ row }) =>
-              (row.status >= 10 && row.status !== 30 && row.status !== 43) ||
-              row.disbursement_channel_id > 0,
-            text: () => t("disbursement_order.distribute"),
-            onClick: ({ row }) => {
-              distributeDialog.setTitle(t("disbursement_order.distribute"));
-              distributeDialog.open({ data: row });
-            },
-          },
-          {
             name: "write_off",
             icon: "i-heroicons:qr-code",
             show: ({ row }) =>
               showBtn("transaction:disbursement_order:update", row),
             disabled: ({ row }) =>
-              (row.status !== 2 && row.status !== 11 && row.status !== 30 && row.status !== 43) ||
-              row.disbursement_channel_id == 0,
+              row.status !== 10 && row.status !== 11 && row.status !== 30 && row.status !== 43,
             text: () => t("disbursement_order.write_off"),
             onClick: ({ row }) => {
               dialog.setTitle(t("disbursement_order.write_off"));

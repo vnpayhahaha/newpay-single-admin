@@ -121,67 +121,14 @@ export default function getTableColumns(
     },
     // 普通列
     {
-      label: () => t("collection_order.channel"),
-      prop: "channel",
-      width: 220,
-      cellRender: ({ row }) => {
-        return (
-          <div
-            class="text-align-left"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <el-avatar shape="square" src={row.channel.channel_icon} />
-            <div class="ml-5" style={{ flex: 1, minWidth: 0 }}>
-              <p>
-                <el-text class="mx-1" type="primary">
-                  {row.channel.channel_code}
-                </el-text>
-              </p>
-              <p>
-                <el-text class="mx-1" truncated>
-                  {row.channel.channel_name}
-                </el-text>
-              </p>
-              {row.bank_account?.branch_name && (
-                <p>
-                  <el-text class="mx-1" truncated>
-                    {row.bank_account?.branch_name}
-                  </el-text>
-                </p>
-              )}
-              {row.channel_account?.merchant_id && (
-                <p>
-                  <el-text class="mx-1" truncated>
-                    {row.channel_account?.merchant_id}
-                  </el-text>
-                </p>
-              )}
-            </div>
-          </div>
-        );
-      },
+      label: () => t("collection_order.device_id"),
+      prop: "device_id",
+      width: 100,
     },
     {
-      label: () => t("collection_order.branch_name"),
-      prop: "branch_name",
-      width: "120px",
-      hide: true,
-      cellRender: ({ row }) => {
-        return (
-          <div
-            class="text-align-left"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            {row.bank_account?.branch_name && (
-              <p>
-                <el-text class="mx-1" truncated>
-                  {row.bank_account?.branch_name}
-                </el-text>
-              </p>
-            )}
-          </div>
-        );
-      },
+      label: () => t("collection_order.member_id"),
+      prop: "member_id",
+      width: 100,
     },
     {
       label: () => t("collection_order.collection_type"),

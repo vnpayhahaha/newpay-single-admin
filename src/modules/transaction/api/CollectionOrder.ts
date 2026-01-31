@@ -31,8 +31,10 @@ export interface CollectionOrderVo {
   settlement_type: string;
   // 收款类型:1-银行卡 2-UPI 3-第三方支付
   collection_type: string;
-  // 收款渠道ID
-  collection_channel_id: number;
+  // 设备ID
+  device_id: number;
+  // 会员ID
+  member_id: number;
   // 支付时间
   pay_time: string;
   // 订单失效时间
@@ -101,22 +103,6 @@ export interface CollectionOrderVo {
   transaction_voucher_id: number;
   cancelled_at: string;
   cancelled_by: number;
-  bank_account: {
-    //
-    id: number;
-    // 银行名称
-    branch_name: string;
-  } | null;
-  channel_account: {
-    id: number;
-    merchant_id: string;
-  } | null;
-  channel: {
-    channel_code: string;
-    channel_icon: string;
-    channel_name: string;
-    id: number;
-  };
   cancel_operator: {
     id: number;
     username: string;

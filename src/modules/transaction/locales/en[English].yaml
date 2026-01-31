@@ -193,6 +193,15 @@ disbursement_order:
   undistributed: undistributed
   distributed: distributed
   distribute: Distribute
+  distribute_success: Distribute Success
+  selected_orders: Selected Orders
+  orders_selected: orders selected
+  device_id: Device ID
+  device_id_required: Please enter Device ID
+  member_id: Member ID
+  member_id_placeholder: Optional, leave empty to not specify member
+  command_id: Command ID
+  command_no: Command No
   query_total: Query Total
   write_off: Write Off
   downloadBankBillMessage: Download bank statement

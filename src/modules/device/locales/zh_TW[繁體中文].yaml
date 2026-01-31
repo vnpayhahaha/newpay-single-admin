@@ -1,0 +1,86 @@
+device:
+  index: 設備管理
+device_command:
+  index: 指令佇列
+  command_no: 指令編號
+  device_id: 設備ID
+  command_type: 指令類型
+  business_type: 業務類型
+  order_id: 訂單ID
+  order_no: 訂單號
+  command_data: 指令數據
+  priority: 優先級
+  status: 狀態
+  retry_count: 重試次數
+  max_retry: 最大重試
+  timeout_seconds: 超時時間(秒)
+  scheduled_at: 計劃執行時間
+  sent_at: 發送時間
+  started_at: 開始執行時間
+  completed_at: 完成時間
+  expire_at: 過期時間
+  error_code: 錯誤代碼
+  error_message: 錯誤信息
+  lock_version: 鎖版本
+  created_at: 創建時間
+  updated_at: 更新時間
+  retry: 重試
+  cancel: 取消
+  detail: 詳情
+  result_list: 執行結果
+  no_result: 暫無執行結果
+  retry_confirm: 確認要重試此指令嗎？
+  cancel_confirm: 確認要取消此指令嗎？
+  retry_success: 指令重試成功
+  cancel_success: 指令取消成功
+  command_type_options:
+    1: 代收支付
+    2: 代付支付
+    3: 查詢餘額
+    4: 截圖
+  business_type_options:
+    1: 代收
+    2: 代付
+  status_options:
+    1: 待處理
+    2: 已發送
+    3: 執行中
+    4: 成功
+    5: 失敗
+    6: 超時
+    7: 已取消
+device_command_result:
+  index: 執行結果
+  result_no: 結果編號
+  command_id: 指令ID
+  command_no: 指令編號
+  device_id: 設備ID
+  result_type: 結果類型
+  result_code: 結果代碼
+  result_message: 結果描述
+  result_data: 結果數據
+  utr: UTR
+  paid_amount: 實付金額
+  screenshot_url: 截圖URL
+  raw_data: 原始數據
+  execution_time: 執行耗時(ms)
+  process_status: 處理狀態
+  process_result: 處理結果
+  processed_at: 處理時間
+  created_at: 創建時間
+  result_type_options:
+    1: 成功
+    2: 失敗
+    3: 超時
+    4: 部分成功
+  process_status_options:
+    1: 待處理
+    2: 處理中
+    3: 已處理
+    4: 處理失敗
+menu:
+  device_command:
+    list: 指令佇列列表
+    update: 指令管理
+  device_command_result:
+    list: 執行結果列表

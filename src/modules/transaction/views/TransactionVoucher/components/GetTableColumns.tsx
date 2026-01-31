@@ -49,88 +49,14 @@ export default function getTableColumns(
     },
     // 普通列
     {
-      label: () => t("transaction_voucher.channel_id"),
-      prop: "channel_id",
-      width: 220,
-      cellRender: ({ row }) => {
-        return (
-          <div
-            class="text-align-left"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <el-avatar shape="square" src={row.channel.channel_icon} />
-            <div class="ml-5" style={{ flex: 1, minWidth: 0 }}>
-              <p>
-                <el-text class="mx-1" type="primary">
-                  {row.channel.channel_code}
-                </el-text>
-              </p>
-              <p>
-                <el-text class="mx-1" truncated>
-                  {row.channel.channel_name}
-                </el-text>
-              </p>
-            </div>
-          </div>
-        );
-      },
+      label: () => t("transaction_voucher.device_id"),
+      prop: "device_id",
+      width: 100,
     },
     {
-      label: () => t("transaction_voucher.channel_account_id"),
-      prop: "channel_account_id",
-      width: 220,
-      cellRender: ({ row }) => {
-        return (
-          <div
-            class="text-align-left"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <div class="ml-5" style={{ flex: 1, minWidth: 0 }}>
-              <p>
-                <el-text class="mx-1" type="primary">
-                  {row.channel_account?.merchant_id || ""}
-                </el-text>
-              </p>
-            </div>
-          </div>
-        );
-      },
-    },
-    {
-      label: () => t("transaction_voucher.bank_account_id"),
-      prop: "bank_account_id",
-      width: 220,
-      cellRender: ({ row }) => {
-        return (
-          <div
-            class="text-align-left"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <div class="ml-5" style={{ flex: 1, minWidth: 0 }}>
-              <p>
-                <el-text class="mx-1" type="primary">
-                  {row.bank_account?.account_holder || ""}
-                </el-text>
-              </p>
-              <p>
-                <el-text class="mx-1" truncated>
-                  {row.bank_account?.account_number}
-                </el-text>
-              </p>
-              <p>
-                <el-text class="mx-1" truncated>
-                  {row.bank_account?.bank_code}
-                </el-text>
-              </p>
-              <p>
-                <el-text class="mx-1" truncated>
-                  {row.bank_account?.upi_id}
-                </el-text>
-              </p>
-            </div>
-          </div>
-        );
-      },
+      label: () => t("transaction_voucher.member_id"),
+      prop: "member_id",
+      width: 100,
     },
     {
       label: () => t("transaction_voucher.collection_card_no"),
