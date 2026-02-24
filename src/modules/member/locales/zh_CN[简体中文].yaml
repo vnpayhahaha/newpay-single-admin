@@ -144,6 +144,58 @@ MemberTronTransactionRecord:
     verified: 已核销
     cancelled: 已取消
     timeout: 已超时
+MemberUpiAccount:
+  lable: UPI账号管理
+  member_id: 客户
+  upi_id: UPI地址
+  upi_name: 持有人姓名
+  phone: 关联手机号
+  status: 状态
+  is_default: 默认账号
+  support_collection: 支持收款
+  support_disbursement: 支持付款
+  daily_max_receipt_amount: 单日收款限额
+  daily_max_payment_amount: 单日付款限额
+  daily_max_receipt_count: 单日收款次数上限
+  daily_max_payment_count: 单日付款次数上限
+  today_receipt_amount: 当日已收款
+  today_payment_amount: 当日已付款
+  today_receipt_count: 当日收款次数
+  today_payment_count: 当日付款次数
+  last_receipt_at: 最近收款时间
+  last_payment_at: 最近付款时间
+  stat_date: 统计日期
+  remark: 备注
+  created_at: 创建时间
+  updated_at: 更新时间
+  member_username: 客户用户名
+  today_stat: 当日统计
+  limit_config: 限额配置
+  placeholder:
+    upi_id: "请输入UPI地址(如 user{'@'}upi)"
+    upi_name: 请输入UPI持有人姓名
+    phone: 请输入关联手机号
+    remark: 请输入备注信息
+    daily_max_receipt_amount: "0表示不限制"
+    daily_max_payment_amount: "0表示不限制"
+    daily_max_receipt_count: "0表示不限制"
+    daily_max_payment_count: "0表示不限制"
+    select_member: 请选择客户
+  rules:
+    member_id_required: 请选择客户
+    upi_id_required: 请输入UPI地址
+    upi_name_required: 请输入UPI持有人姓名
+    status_required: 请选择状态
+  status_enum:
+    enable: 启用
+    disable: 停用
+  is_default_enum:
+    yes: 是
+    no: 否
+  yes_no:
+    yes: 是
+    no: 否
+  unlimited: 不限制
 MemberNotice:
   lable: 会员通知管理
   title: 通知标题

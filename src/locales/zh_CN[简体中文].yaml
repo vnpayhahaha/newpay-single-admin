@@ -222,3 +222,15 @@ validation:
 google_2f:
   title: 谷歌双因素验证码
   need_valid_msg: 需要进行谷歌双因素验证
+channel:
+  index: 渠道管理
+channelAccount:
+  index: 渠道账户
+bankAccount:
+  index: 银行账户
+ChannelAccountDailyStats:
+  index: 渠道账单统计
+channel_callback_record:
+  index: 渠道回调记录
+channel_request_record:
+  index: 渠道请求记录

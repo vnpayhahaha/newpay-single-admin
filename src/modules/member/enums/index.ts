@@ -84,6 +84,38 @@ export const MemberNoticeTypeEnum: Record<number, EnumItem> = {
 }
 
 /**
+ * UPI账号状态枚举
+ */
+export const MemberUpiAccountStatusEnum: Record<number, EnumItem> = {
+  1: { value: 1, labelKey: 'enable', color: 'success' },
+  0: { value: 0, labelKey: 'disable', color: 'danger' },
+}
+
+/**
+ * UPI账号是否默认枚举
+ */
+export const MemberUpiAccountDefaultEnum: Record<number, EnumItem> = {
+  1: { value: 1, labelKey: 'yes', color: 'primary' },
+  0: { value: 0, labelKey: 'no', color: 'info' },
+}
+
+/**
+ * UPI账号支持收款枚举
+ */
+export const MemberUpiAccountCollectionEnum: Record<number, EnumItem> = {
+  1: { value: 1, labelKey: 'yes', color: 'success' },
+  0: { value: 0, labelKey: 'no', color: 'info' },
+}
+
+/**
+ * UPI账号支持付款枚举
+ */
+export const MemberUpiAccountDisbursementEnum: Record<number, EnumItem> = {
+  1: { value: 1, labelKey: 'yes', color: 'success' },
+  0: { value: 0, labelKey: 'no', color: 'info' },
+}
+
+/**
  * 获取枚举标签的国际化 key
  */
 export function getEnumLabelKey(enumMap: Record<number, EnumItem>, value: number, prefix: string): string {

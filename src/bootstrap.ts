@@ -62,6 +62,8 @@ async function createI18nService(app: App) {
     locale: useUserStore().getLanguage(),
     silentTranslationWarn: true,
     silentFallbackWarn: true,
+    missingWarn: false,
+    fallbackWarn: false,
     messages,
   }))
 }
