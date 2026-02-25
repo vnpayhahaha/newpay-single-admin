@@ -172,7 +172,7 @@ MemberUpiAccount:
   today_stat: 当日统计
   limit_config: 限额配置
   placeholder:
-    upi_id: "请输入UPI地址(如 user{'@'}upi)"
+    upi_id: "请输入UPI地址(如 user{'@'}upi.com)"
     upi_name: 请输入UPI持有人姓名
     phone: 请输入关联手机号
     remark: 请输入备注信息
@@ -184,6 +184,7 @@ MemberUpiAccount:
   rules:
     member_id_required: 请选择客户
     upi_id_required: 请输入UPI地址
+    upi_id_format: "请输入正确的UPI地址格式(如 user{'@'}upi.com)"
     upi_name_required: 请输入UPI持有人姓名
     status_required: 请选择状态
   status_enum:

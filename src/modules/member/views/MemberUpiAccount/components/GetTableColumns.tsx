@@ -144,21 +144,21 @@ export default function getTableColumns(dialog: UseDialogExpose, formRef: any, t
     {
       label: () => local('MemberUpiAccount.last_receipt_at'),
       prop: 'last_receipt_at',
-      width: 160,
+      width: 180,
       cellRender: ({ row }) => row.last_receipt_at || '-',
     },
     // 最近付款时间
     {
       label: () => local('MemberUpiAccount.last_payment_at'),
       prop: 'last_payment_at',
-      width: 160,
+      width: 180,
       cellRender: ({ row }) => row.last_payment_at || '-',
     },
     // 创建时间
     {
       label: () => local('MemberUpiAccount.created_at'),
       prop: 'created_at',
-      width: 160,
+      width: 180,
     },
     // 操作列
     {

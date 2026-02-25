@@ -144,6 +144,59 @@ MemberTronTransactionRecord:
     verified: Verified
     cancelled: Cancelled
     timeout: Timeout
+MemberUpiAccount:
+  lable: UPI Account Management
+  member_id: Member
+  upi_id: UPI Address
+  upi_name: Account Holder
+  phone: Linked Phone
+  status: Status
+  is_default: Default Account
+  support_collection: Support Collection
+  support_disbursement: Support Disbursement
+  daily_max_receipt_amount: Daily Collection Limit
+  daily_max_payment_amount: Daily Disbursement Limit
+  daily_max_receipt_count: Daily Collection Count Limit
+  daily_max_payment_count: Daily Disbursement Count Limit
+  today_receipt_amount: Today Collection
+  today_payment_amount: Today Disbursement
+  today_receipt_count: Today Collection Count
+  today_payment_count: Today Disbursement Count
+  last_receipt_at: Last Collection At
+  last_payment_at: Last Disbursement At
+  stat_date: Statistics Date
+  remark: Remark
+  created_at: Created At
+  updated_at: Updated At
+  member_username: Member Username
+  today_stat: Today Statistics
+  limit_config: Limit Configuration
+  placeholder:
+    upi_id: "Enter UPI address (e.g. user{'@'}upi.com)"
+    upi_name: Enter account holder name
+    phone: Enter linked phone number
+    remark: Enter remark
+    daily_max_receipt_amount: "0 means unlimited"
+    daily_max_payment_amount: "0 means unlimited"
+    daily_max_receipt_count: "0 means unlimited"
+    daily_max_payment_count: "0 means unlimited"
+    select_member: Select member
+  rules:
+    member_id_required: Please select a member
+    upi_id_required: Please enter UPI address
+    upi_id_format: "Please enter a valid UPI address (e.g. user{'@'}upi.com)"
+    upi_name_required: Please enter account holder name
+    status_required: Please select status
+  status_enum:
+    enable: Enabled
+    disable: Disabled
+  is_default_enum:
+    yes: Yes
+    no: No
+  yes_no:
+    yes: Yes
+    no: No
+  unlimited: Unlimited
 MemberNotice:
   lable: Member Notice Management
   title: Notice Title

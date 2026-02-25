@@ -65,6 +65,7 @@ export default function getFormItems(formType: 'add' | 'edit' = 'add', t: any, m
       itemProps: {
         rules: [
           { required: true, message: local('MemberUpiAccount.rules.upi_id_required'), trigger: 'blur' },
+          { pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: local('MemberUpiAccount.rules.upi_id_format'), trigger: 'blur' },
         ],
       },
     },
