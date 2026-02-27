@@ -224,3 +224,44 @@ MemberNotice:
     select_members: 选择接收会员（留空则发送给全体会员）
   help:
     member_selection: "说明：不选择会员 = 全体会员；选择一个会员 = 单个通知；选择多个会员 = 批量通知"
+UpiChannel:
+  lable: UPI渠道管理
+  channel_code: 渠道编码
+  channel_name: 渠道名称
+  channel_icon: 渠道图标
+  country_code: 国家代码
+  status: 状态
+  created_at: 创建时间
+  updated_at: 更新时间
+  placeholder:
+    channel_code: 请输入渠道编码
+    channel_name: 请输入渠道名称
+    channel_icon: 请输入渠道图标URL
+    country_code: 请输入国家代码
+  rules:
+    channel_code_required: 请输入渠道编码
+    channel_name_required: 请输入渠道名称
+    status_required: 请选择状态
+  status_enum:
+    enable: 启用
+    disable: 停用
+MemberUpiChannel:
+  lable: 客户UPI渠道管理
+  member_id: 客户
+  upi_channel_id: UPI渠道
+  channel_code: 渠道编码
+  channel_name: 渠道名称
+  config: 渠道配置
+  created_at: 创建时间
+  updated_at: 更新时间
+  member_username: 客户用户名
+  view_config: 查看配置
+  placeholder:
+    channel_code: 请输入渠道编码
+    config: "请输入渠道配置(JSON格式)"
+    select_member: 请选择客户
+    select_channel: 请选择UPI渠道
+  rules:
+    member_id_required: 请选择客户
+    upi_channel_id_required: 请选择UPI渠道
+    channel_code_required: 请输入渠道编码

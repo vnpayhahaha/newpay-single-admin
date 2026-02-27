@@ -116,6 +116,14 @@ export const MemberUpiAccountDisbursementEnum: Record<number, EnumItem> = {
 }
 
 /**
+ * UPI渠道状态枚举
+ */
+export const UpiChannelStatusEnum: Record<number, EnumItem> = {
+  1: { value: 1, labelKey: 'enable', color: 'success' },
+  0: { value: 0, labelKey: 'disable', color: 'danger' },
+}
+
+/**
  * 获取枚举标签的国际化 key
  */
 export function getEnumLabelKey(enumMap: Record<number, EnumItem>, value: number, prefix: string): string {

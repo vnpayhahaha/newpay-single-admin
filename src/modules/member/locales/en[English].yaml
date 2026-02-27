@@ -224,3 +224,44 @@ MemberNotice:
     select_members: Select members (leave blank to send to all members)
   help:
     member_selection: "Note: No selection = All members; Single selection = Single notice; Multiple selections = Batch notice"
+UpiChannel:
+  lable: UPI Channel Management
+  channel_code: Channel Code
+  channel_name: Channel Name
+  channel_icon: Channel Icon
+  country_code: Country Code
+  status: Status
+  created_at: Created At
+  updated_at: Updated At
+  placeholder:
+    channel_code: Enter channel code
+    channel_name: Enter channel name
+    channel_icon: Enter channel icon URL
+    country_code: Enter country code
+  rules:
+    channel_code_required: Please enter channel code
+    channel_name_required: Please enter channel name
+    status_required: Please select status
+  status_enum:
+    enable: Enabled
+    disable: Disabled
+MemberUpiChannel:
+  lable: Member UPI Channel Management
+  member_id: Member
+  upi_channel_id: UPI Channel
+  channel_code: Channel Code
+  channel_name: Channel Name
+  config: Channel Config
+  created_at: Created At
+  updated_at: Updated At
+  member_username: Member Username
+  view_config: View Config
+  placeholder:
+    channel_code: Enter channel code
+    config: "Enter channel config (JSON format)"
+    select_member: Select member
+    select_channel: Select UPI channel
+  rules:
+    member_id_required: Please select a member
+    upi_channel_id_required: Please select a UPI channel
+    channel_code_required: Please enter channel code
